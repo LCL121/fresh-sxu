@@ -28,4 +28,9 @@ a:hover {
 body {
   background: rgba(0, 0, 0, 0.5);
 }
+
+#app {
+  width: 100vw;
+  height: 100vh;
+}
 </style>
