@@ -1,19 +1,18 @@
 <template>
   <div class="enter-school">
     <div style="position: relative;">
-      <div style="position: absolute; top: 30px; left: 20px; font-size: 1rem; color: white;">
+        <div style="position: absolute; top: 30px; left: 20px; font-size: 1rem; color: white;">
         <router-link to="/home">&lt; 返回主菜单</router-link></div>
         <div class="bgi"></div>
         <h1 style="position: absolute; bottom: 20px; left: 20px; font-size: 1.1rem; color: white;">走进山大</h1>
-      </div>
-
+    </div>
     <div id="naver">
-      <ul>
-      <li @click="select(1)"><span>百年山大</span></li>
-      <li @click="select(2)"><span>坞城校区</span></li>
-      <li @click="select(3)"><span>大东关校区</span></li>
-      <li @click="select(4)"><span>东山校区</span></li>
-    </ul>
+        <ul>
+            <li @click="select(1)"><span>百年山大</span></li>
+            <li @click="select(2)"><span>坞城校区</span></li>
+            <li @click="select(3)"><span>大东关校区</span></li>
+            <li @click="select(4)"><span>东山校区</span></li>
+        </ul>
     </div>
 
     <enter-school1 v-if="selected === 1"></enter-school1>
@@ -53,7 +52,8 @@ export default {
 <style scoped>
 .enter-school{
   background: #fff9e7;
-  border-radius: 10px;
+  width:100%;
+  overflow:hidden;
 }
 .bgi{
   background-image: url("http://bkzs.sxu.edu.cn/images/2019-07/08b0fdfd58ea4cd1a27e0005c97bd04b.jpg");
@@ -83,7 +83,12 @@ li{
     margin:0px;
 }
 
+span{
+    font-size: 2.7vw;
+}
+
 span:active{
-  color: pink;
+    color: pink;
+    font-size: 80%;
 }
 </style>

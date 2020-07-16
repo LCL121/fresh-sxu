@@ -1,0 +1,43 @@
+body {
+    font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, \\5FAE\8F6F\96C5\9ED1, Arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.5;
+    color: #515a6e;
+}
+
+p {
+    text-indent: 2em;
+    line-height: 32px;
+    margin: 19px 0!important;
+}
+
+:before,
+:after {
+    box-sizing: border-box;
+}
+
+.text {
+    font-family: Arial, Helvetica, sans-serif;
+    width: 92%;
+    display: block;
+    font-size: 19px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 3%;
+}
+
+.img {
+    height: 700px;
+    width: 100%;
+    background: fixed no-repeat;
+    background-size: calc(100vw - 10px);
+    background-position: 100% 100%;
+}
+
+
+/* :root {
+    overflow-y: auto;
+    overflow-x: hidden;
+} */

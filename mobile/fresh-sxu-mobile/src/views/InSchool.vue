@@ -1,16 +1,22 @@
 <template>
   <div class="in-school">
-    <img src="http://bkzs.sxu.edu.cn/images/2019-07/a74bf07dd058456f9215d79e60e835fa.png" width="100%" />
-    <router-link to="/home">&lt;返回主菜单</router-link>
-    <span>校内生活</span>
-    <ul>
-      <li @click="select(1)">住在山大</li>
-      <li @click="select(2)">便利生活</li>
-      <li @click="select(3)">吃在山大</li>
-      <li @click="select(4)">大型活动</li>
-      <li @click="select(5)">多彩社团</li>
-      <li @click="select(6)">学生组织</li>
-    </ul>
+    <div style="position: relative;">
+        <div style="position: absolute; top: 30px; left: 20px; font-size: 1rem; color: white;">
+        <router-link to="/home">&lt; 返回主菜单</router-link></div>
+        <div class="bgi"></div>
+        <h1 style="position: absolute; bottom: 20px; left: 20px; font-size: 1.1rem; color: white;">校内生活</h1>
+    </div>
+    <div id="naver">
+        <ul>
+            <li @click="select(1)"><span>住在山大</span></li>
+            <li @click="select(2)"><span>便利生活</span></li>
+            <li @click="select(3)"><span>吃在山大</span></li>
+            <li @click="select(4)"><span>大型活动</span></li>
+            <li @click="select(5)"><span>多彩社团</span></li>
+            <li @click="select(6)"><span>学生组织</span></li>
+        </ul>
+    </div>
+
     <in-school1 v-if="selected === 1"></in-school1>
     <in-school2 v-else-if="selected === 2"></in-school2>
     <in-school3 v-else-if="selected === 3"></in-school3>
@@ -52,34 +58,47 @@ export default {
 </script>
 
 <style scoped>
-
-a{
-  position:absolute;
-  top:4%;
-  left:6%;
-  font-size:10px;
+.school-preparation{
+  background: #fff9e7;
+  width:100%;
+  overflow:hidden;
 }
 
-div.in-school span{
-  display:block;
-  position:absolute;
-  left:6%;
-  top:27%;
-  font-size: 18.75px;
-  color: #ffffff;
-  font-weight: 700;
-}
-ul li{
-  font-size: 12px;
-  font-weight: 400;
-  display:inline-block;
-  text-align: center;
-  height: 50px;
-  line-height: 50px;
-  width:16.667%;
-  margin-top:-4px;
-  padding:20px 0;
-  background-color: #fff9e7;
+.bgi{
+  background-image: url("http://bkzs.sxu.edu.cn/images/2019-07/a74bf07dd058456f9215d79e60e835fa.png");
+  background-size: 100% 230px;
+  background-repeat: no-repeat;
+  width:100%;
+  height:230px;
 }
 
+#naver{
+    text-align:center;
+    font-weight: bold;
+    background: #fff9e7;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    color: #808080;
+    display:inline-block;
+}
+
+li{
+    float: left;
+    padding:10px;
+    margin:0px;
+}
+
+span{
+    font-size: 2.7vw;
+}
+
+span:active{
+    color: pink;
+    font-size: 80%;
+}
 </style>

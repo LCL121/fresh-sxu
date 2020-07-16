@@ -53,6 +53,8 @@ export default {
 <style scoped>
 .other-info{
   background: #fff9e7;
+  width:100%;
+  overflow:hidden;
 }
 
 .bgi{
@@ -83,7 +85,12 @@ li{
     padding:10px;
     margin:0px;
 }
+span{
+    font-size: 2.7vw;
+}
+
 span:active{
-  color: pink;
+    color: pink;
+    font-size: 80%;
 }
 </style>

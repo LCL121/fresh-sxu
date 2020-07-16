@@ -8,12 +8,12 @@
       </div>
 
     <div id="naver">
-      <ul>
-      <li @click="select(1)"><span>百年山大</span></li>
-      <li @click="select(2)"><span>坞城校区</span></li>
-      <li @click="select(3)"><span>大东关校区</span></li>
-      <li @click="select(4)"><span>东山校区</span></li>
-    </ul>
+        <ul>
+            <li @click="select(1)"><span>百年山大</span></li>
+            <li @click="select(2)"><span>坞城校区</span></li>
+            <li @click="select(3)"><span>大东关校区</span></li>
+            <li @click="select(4)"><span>东山校区</span></li>
+        </ul>
     </div>
 
     <outside-school1 v-if="selected === 1"></outside-school1>
@@ -53,6 +53,8 @@ export default {
 <style scoped>
 .outside-school{
   background: #fff9e7;
+  width:100%;
+  overflow:hidden;
 }
 
 .bgi{
@@ -83,7 +85,13 @@ li{
     padding:10px;
     margin:0px;
 }
+
+span{
+    font-size: 2.7vw;
+}
+
 span:active{
-  color: pink;
+    color: pink;
+    font-size: 80%;
 }
 </style>

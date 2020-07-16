@@ -45,9 +45,9 @@ export default {
 .gohome {
   position: relative;
   /* background-image: url("http://bkzs.sxu.edu.cn/images/2019-07/25bf5b5aabbd4037857b86811838ec62.png"); */
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   width: 100%;
-  margin: auto;
+  top:4rem;
 }
 
 .gohome img {
@@ -56,9 +56,12 @@ export default {
 
 .gohome span {
   border: 1px solid white;
-  padding: 20px;
+  font-size: 14px;
+  padding: 8px 10px;
   margin: 5px;
-  border-radius: 5px;
+  border-radius: 10px;
+  position: relative;
+  top:-3rem;
 }
 
 p {

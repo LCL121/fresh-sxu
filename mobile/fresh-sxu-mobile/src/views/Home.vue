@@ -24,67 +24,75 @@ div.home{
   background: url(http://bkzs.sxu.edu.cn/images/2019-07/12a1c1d5b5684c9d8c204acfc7705707.jpg);
   background-position: 50%;
   background-size: 190% 100%;
+
 }
 
 a{
   border:2px solid #fff;
   border-radius: 10px;
   font-size: 24px;
-  width: 150px;
-  height: 52.5px;
-  line-height: 52.5px;
+  width: 130px;
+  height: 46px;
+  line-height: 46px;
   text-align: center;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   background-color: transparent;
 }
 
 a.enter-school{
   position: absolute;
-  top:13%;
+  top:12%;
   left:50%;
-  margin-left: -77px;
+
+  margin-left: -66px;
 }
 
 a.school-pre{
   position: absolute;
   top:23%;
   left:50%;
-  margin-left: -77px;
+
+  margin-left: -66px;
 }
 
 a.in-school{
   position: absolute;
-  top:33%;
+  top:34%;
   left:50%;
-  margin-left: -77px;
+
+  margin-left: -66px;
 }
 
 a.outside-school{
   position: absolute;
-  top:43%;
+  top:45%;
   left:50%;
-  margin-left: -77px;
+
+  margin-left: -66px;
 }
 
 a.other-info{
   position: absolute;
-  top:53%;
+  top:56%;
   left:50%;
-  margin-left: -77px;
+
+  margin-left: -66px;
 }
 
 a.about{
   position: absolute;
-  top:63%;
+  top:67%;
   left:50%;
-  margin-left: -77px;
+
+  margin-left: -66px;
 }
 
 a.back{
   position: absolute;
-  top:73%;
+  top:78%;
   left:50%;
-  margin-left: -77px;
+
+  margin-left: -66px;
 }
 
 </style>
