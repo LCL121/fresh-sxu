@@ -71,6 +71,7 @@ div.in-school1{
 p{
   font-size:15px;
   padding:8px 10px;
+  line-height: 25px;
 }
 
 h3{

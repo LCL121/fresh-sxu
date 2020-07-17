@@ -67,6 +67,7 @@ div.in-school6{
 p{
   font-size:15px;
   padding:8px 10px;
+  line-height: 25px;
 }
 
 h2{

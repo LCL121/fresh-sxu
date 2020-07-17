@@ -62,9 +62,9 @@ h2,h3{
     font-size: 16px;
 }
 
-div.about > p > a{
+.text-content a{
   display: inline-block;
-  color: -webkit-link;
+  color: purple;
   text-decoration: underline;
 }
 

@@ -92,6 +92,6 @@ span{
 
 span:active{
     color: pink;
-    font-size: 80%;
+    /* font-size: 80%; */
 }
 </style>

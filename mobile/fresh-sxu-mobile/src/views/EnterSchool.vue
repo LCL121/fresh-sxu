@@ -79,7 +79,7 @@ ul {
 
 li{
     float: left;
-    padding:10px;
+    padding:10px 5px;
     margin:0px;
 }
 
@@ -89,6 +89,6 @@ span{
 
 span:active{
     color: pink;
-    font-size: 80%;
+    /* font-size: 80%; */
 }
 </style>

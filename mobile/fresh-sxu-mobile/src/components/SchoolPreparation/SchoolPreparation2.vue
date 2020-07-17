@@ -39,6 +39,7 @@ h4,
 div.school-preparation2 p{
   font-size: 15px;
   padding:8px 10px;
+  line-height: 25px;
 }
 
 </style>

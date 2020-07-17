@@ -47,6 +47,7 @@ div.school-preparation3 h3{
 div.school-preparation3 p{
   font-size: 15px;
   padding:8px 10px;
+  line-height: 25px;
 }
 
 </style>
