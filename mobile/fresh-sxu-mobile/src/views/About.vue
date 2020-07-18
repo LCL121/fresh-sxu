@@ -2,7 +2,7 @@
     <div class="about">
     <div style="position: relative;">
         <div style="position: absolute; top: 30px; left: 20px; font-size: 1rem; color: white;">
-        <router-link to="/home">&lt; 返回主菜单</router-link></div>
+        <router-link to="/home" class="back">&lt; 返回主菜单</router-link></div>
         <div class="bgi"></div>
         <h1 style="position: absolute; bottom: 20px; left: 20px; font-size: 1.1rem; color: white;">关于我们</h1>
     </div>
@@ -57,15 +57,18 @@ h2,h3{
 .text-content p{
     display:inline-block;
     padding: 5px;
-    width:100%;
+    line-height: 25px;
     vertical-align:middle;
-    font-size: 16px;
 }
 
 .text-content a{
   display: inline-block;
   color: purple;
   text-decoration: underline;
+}
+
+.back{
+  font-weight: bold;
 }
 
 </style>

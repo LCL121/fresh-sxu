@@ -9,17 +9,15 @@
 
     <div id="naver">
         <ul>
-            <li @click="select(1)"><span>百年山大</span></li>
-            <li @click="select(2)"><span>坞城校区</span></li>
-            <li @click="select(3)"><span>大东关校区</span></li>
-            <li @click="select(4)"><span>东山校区</span></li>
+            <li @click="select(1)"><span class="item1">周边商圈</span></li>
+            <li @click="select(2)"><span class="item2">风景名胜</span></li>
+            <li @click="select(3)"><span class="item3">服务网点</span></li>
         </ul>
     </div>
 
     <outside-school1 v-if="selected === 1"></outside-school1>
     <outside-school2 v-else-if="selected === 2"></outside-school2>
-    <outside-school3 v-else-if="selected === 3"></outside-school3>
-    <outside-school4 v-else></outside-school4>
+    <outside-school3 v-else></outside-school3>
   </div>
 </template>
 
@@ -27,7 +25,6 @@
 import OutsideSchool1 from '@/components/OutsideSchool/OutsideSchool1.vue'
 import OutsideSchool2 from '@/components/OutsideSchool/OutsideSchool2.vue'
 import OutsideSchool3 from '@/components/OutsideSchool/OutsideSchool3.vue'
-import OutsideSchool4 from '@/components/OutsideSchool/OutsideSchool4.vue'
 
 export default {
   name: 'OutsideSchool',
@@ -39,8 +36,7 @@ export default {
   components: {
     OutsideSchool1,
     OutsideSchool2,
-    OutsideSchool3,
-    OutsideSchool4
+    OutsideSchool3
   },
   methods: {
     select (index) {
@@ -69,6 +65,7 @@ export default {
     text-align:center;
     font-weight: bold;
     background: #fff9e7;
+    padding:10px 0;
 }
 
 ul {
@@ -80,18 +77,32 @@ ul {
     display:inline-block;
 }
 
-li{
-    float: left;
-    padding:10px;
-    margin:0px;
+span{
+    width: 33.334%;
+    position: absolute;
+    top:240px;
+    font-size: 4vw;
 }
 
-span{
-    font-size: 2.7vw;
+.item1{
+    left:3%;
+}
+
+.item2{
+    left: 34%;
+}
+
+.item3{
+    right: 3%;
 }
 
 span:active{
     color: pink;
-    /* font-size: 80%; */
+    font-size: 90%;
 }
+
+a{
+  font-weight: bold;
+}
+
 </style>

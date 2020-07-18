@@ -8,10 +8,10 @@
     </div>
     <div id="naver">
         <ul>
-            <li @click="select(1)"><span>百年山大</span></li>
-            <li @click="select(2)"><span>坞城校区</span></li>
-            <li @click="select(3)"><span>大东关校区</span></li>
-            <li @click="select(4)"><span>东山校区</span></li>
+            <li @click="select(1)"><span class="item1">百年山大</span></li>
+            <li @click="select(2)"><span class="item2">坞城校区</span></li>
+            <li @click="select(3)"><span class="item3">大东关校区</span></li>
+            <li @click="select(4)"><span class="item4">东山校区</span></li>
         </ul>
     </div>
 
@@ -62,10 +62,12 @@ export default {
   width:100%;
   height:230px;
 }
+
 #naver{
     text-align:center;
     font-weight: bold;
     background: #fff9e7;
+    padding:10px 0;
 }
 
 ul {
@@ -77,18 +79,34 @@ ul {
     display:inline-block;
 }
 
-li{
-    float: left;
-    padding:10px 5px;
-    margin:0px;
+span{
+    width: 25%;
+    position: absolute;
+    top:240px;
+    font-size: 4vw;
 }
 
-span{
-    font-size: 2.7vw;
+.item1{
+    left:3%;
+}
+
+.item2{
+    left: 26%;
+}
+.item3{
+    left: 49%;
+}
+.item4{
+    right: 3%;
 }
 
 span:active{
     color: pink;
-    /* font-size: 80%; */
+    font-size: 90%;
 }
+
+a{
+  font-weight: bold;
+}
+
 </style>

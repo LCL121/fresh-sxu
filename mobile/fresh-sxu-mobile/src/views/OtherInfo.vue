@@ -9,10 +9,10 @@
 
     <div id="naver">
       <ul>
-      <li @click="select(1)"><span>学习建议</span></li>
-      <li @click="select(2)"><span>校园地图</span></li>
-      <li @click="select(3)"><span>自我提升</span></li>
-      <li @click="select(4)"><span>图书馆</span></li>
+      <li @click="select(1)"><span class="item1">校园地图</span></li>
+      <li @click="select(2)"><span class="item2">自我提升</span></li>
+      <li @click="select(3)"><span class="item3">其他建议</span></li>
+      <li @click="select(4)"><span class="item4">图书馆</span></li>
     </ul>
     </div>
 
@@ -69,6 +69,7 @@ export default {
     text-align:center;
     font-weight: bold;
     background: #fff9e7;
+    padding:10px 0;
 }
 
 ul {
@@ -80,17 +81,34 @@ ul {
     display:inline-block;
 }
 
-li{
-    float: left;
-    padding:10px;
-    margin:0px;
-}
 span{
-    font-size: 2.7vw;
+    width: 25%;
+    position: absolute;
+    top:240px;
+    font-size: 4vw;
+}
+
+.item1{
+    left:3%;
+}
+
+.item2{
+    left: 26%;
+}
+.item3{
+    left: 49%;
+}
+.item4{
+    right: 3%;
 }
 
 span:active{
     color: pink;
-    /* font-size: 80%; */
+    font-size: 90%;
 }
+
+a{
+  font-weight: bold;
+}
+
 </style>

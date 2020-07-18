@@ -8,12 +8,12 @@
     </div>
     <div id="naver">
         <ul>
-            <li @click="select(1)"><span>住在山大</span></li>
-            <li @click="select(2)"><span>便利生活</span></li>
-            <li @click="select(3)"><span>吃在山大</span></li>
-            <li @click="select(4)"><span>大型活动</span></li>
-            <li @click="select(5)"><span>多彩社团</span></li>
-            <li @click="select(6)"><span>学生组织</span></li>
+            <li @click="select(1)"><span class="item1">住在山大</span></li>
+            <li @click="select(2)"><span class="item2">吃在山大</span></li>
+            <li @click="select(3)"><span class="item3">学生组织</span></li>
+            <li @click="select(4)"><span class="item4">多彩社团</span></li>
+            <li @click="select(5)"><span class="item5">大型活动</span></li>
+            <li @click="select(6)"><span class="item6">便利生活</span></li>
         </ul>
     </div>
 
@@ -61,7 +61,7 @@ export default {
 .school-preparation{
   background: #fff9e7;
   width:100%;
-  overflow:hidden;
+  overflow:auto;
 }
 
 .bgi{
@@ -76,6 +76,7 @@ export default {
     text-align:center;
     font-weight: bold;
     background: #fff9e7;
+    padding:10px 0;
 }
 
 ul {
@@ -87,18 +88,43 @@ ul {
     display:inline-block;
 }
 
-li{
-    float: left;
-    padding:10px;
-    margin:0px;
+span{
+    width: 16%;
+    position: absolute;
+    top:240px;
+    font-size: 3.5vw;
 }
 
-span{
-    font-size: 2.7vw;
+.item1{
+    left:3%;
+}
+
+.item2{
+    left: 19%;
+}
+.item3{
+    left: 34%;
+}
+
+.item4{
+  right: 34%;
+}
+
+.item5{
+  right: 19%;
+}
+
+.item6{
+    right: 3%;
 }
 
 span:active{
     color: pink;
-    /* font-size: 80%; */
+    font-size: 80%;
 }
+
+a{
+  font-weight: bold;
+}
+
 </style>

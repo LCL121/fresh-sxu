@@ -79,4 +79,8 @@ h3{
   padding:17.55px 10px;
 }
 
+img{
+  width: 100%;
+}
+
 </style>

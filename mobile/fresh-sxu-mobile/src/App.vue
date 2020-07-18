@@ -33,4 +33,8 @@ body {
   width: 100vw;
   height: 100vh;
 }
+
+:root {
+  overflow-x: hidden;
+}
 </style>

@@ -8,10 +8,10 @@
     </div>
     <div id="naver">
         <ul>
-            <li @click="select(1)"><span>军训小贴士</span></li>
-            <li @click="select(2)"><span>到校方式</span></li>
-            <li @click="select(3)"><span>报道流程</span></li>
-            <li @click="select(4)"><span>物品准备</span></li>
+            <li @click="select(1)"><span class="item1">军训小贴士</span></li>
+            <li @click="select(2)"><span class="item2">到校方式</span></li>
+            <li @click="select(3)"><span class="item3">报道流程</span></li>
+            <li @click="select(4)"><span class="item4">物品准备</span></li>
         </ul>
     </div>
 
@@ -51,9 +51,9 @@ export default {
 
 <style scoped>
 .school-preparation{
-  background: #fff9e7;
-  width:100%;
-  overflow:hidden;
+    background: #fff9e7;
+    width:100%;
+    overflow:hidden;
 }
 
 .bgi{
@@ -68,6 +68,7 @@ export default {
     text-align:center;
     font-weight: bold;
     background: #fff9e7;
+    padding:10px 0;
 }
 
 ul {
@@ -79,19 +80,40 @@ ul {
     display:inline-block;
 }
 
-li{
+/* li{
     float: left;
     padding:10px;
     margin:0px;
-}
+} */
 
 span{
-    font-size: 2.7vw;
+    width: 25%;
+    position: absolute;
+    top:240px;
+    font-size: 4vw;
+}
+
+.item1{
+    left:3%;
+}
+
+.item2{
+    left: 26%;
+}
+.item3{
+    left: 49%;
+}
+.item4{
+    right: 3%;
 }
 
 span:active{
     color: pink;
-    /* font-size: 80%; */
+    font-size: 90%;
+}
+
+a{
+  font-weight: bold;
 }
 
 </style>
