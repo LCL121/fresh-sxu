@@ -92,7 +92,7 @@ export default {
           title: '返回首页',
           show: false,
           svg: '',
-          path: '/about'
+          path: '/'
         }
       ],
       isFirst: false
