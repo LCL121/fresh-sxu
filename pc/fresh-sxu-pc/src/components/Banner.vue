@@ -1,85 +1,200 @@
 <template>
-  <div id="root" class="rootTwo">
-    <div id="logo" class="logoTwo"></div>
-    <div id="different" class="d_Two">
+  <div id="root" class="root-two">
+    <div id="new-book">
       新生手册
-      <div id="d_d">
+      <div id="nav-word">
         <span>
-          <svg
-            t="1594892725157"
-            class="icon"
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            p-id="3145"
-            width="10"
-            height="10"
-          >
-            <path
-              d="M910.222222 796.444444c-17.066667 0-34.133333-5.688889-45.511111-17.066666L551.822222 409.6c-11.377778-5.688889-17.066667-11.377778-34.133333-11.377778-5.688889 0-22.755556 5.688889-28.444445 11.377778l-329.955555 364.088889c-22.755556 22.755556-56.888889 22.755556-79.644445 5.688889-22.755556-22.755556-22.755556-56.888889-5.688888-79.644445l329.955555-364.088889c28.444444-34.133333 73.955556-51.2 119.466667-51.2s85.333333 22.755556 119.466666 56.888889l312.888889 364.088889c22.755556 22.755556 17.066667 56.888889-5.688889 79.644445-11.377778 5.688889-28.444444 11.377778-39.822222 11.377777z"
-              p-id="3146"
-              fill="#fff"
-            />
-          </svg>
-          导航栏
-          <svg
-            t="1594892802235"
-            class="icon"
-            viewBox="0 0 1024 1024"
-            version="1.1"
-            xmlns="http://www.w3.org/2000/svg"
-            p-id="3269"
-            width="10"
-            height="10"
-          >
-            <path
-              d="M454.188 785.022c-145.192-150.177-290.378-300.353-435.422-450.526-59.842-61.836 37.327-154.021 97.313-91.899 129.23 133.647 258.318 267.296 387.548 400.868 133.646-134.287 267.436-268.574 401.083-402.934 60.84-61.123 158.011 31.060 97.244 91.971-150.105 150.89-300.279 301.703-450.454 452.521-24.933 24.934-72.666 25.575-97.311 0z"
-              p-id="3270"
-              fill="#fff"
-            />
-          </svg>
+          <i></i>导航栏
+          <i></i>
         </span>
       </div>
     </div>
+    <div id="logo" class="logo-two"></div>
+
     <div id="main">
-        <ul>
-            <li></li>
-        </ul>
+      <ul>
+        <li v-for="(item,index) in navs" :key="index" @click="change(index,item)">
+          <a href="javascript:;" class="a-text">
+            {{item.title}}
+            <i>{{item.svg}}</i>
+          </a>
+
+          <ul class="ul-show" @click.stop>
+            <li
+              v-for="(navList,index) in item.list"
+              :key="index"
+              class="list-text"
+              :class="{'list-hover': item.show}"
+              @click="jump(index)"
+            >{{navList}}</li>
+          </ul>
+        </li>
+      </ul>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'Banner'
+  name: 'Banner',
+  data () {
+    return {
+      navs: [
+        {
+          title: '走进山大',
+          list: ['百年山大', '坞城校区', '大东关校区', '东山校区'],
+          listUrl: [],
+          show: false,
+          svg: '',
+          path: '/enter_school'
+        },
+        {
+          title: '入学准备',
+          list: ['物品准备', '报到流程', '到校方式', '军训小贴士'],
+          show: false,
+          svg: '',
+          path: '/shool_preparation'
+        },
+        {
+          title: '校内生活',
+          list: ['住在山大', '学生组织', '大型活动', '便利生活'],
+          show: false,
+          svg: '',
+          path: '/in_school'
+        },
+        {
+          title: '校外生活',
+          list: ['周边商圈', '风景名胜', '服务网点'],
+          show: false,
+          svg: '',
+          path: '/outside_school'
+        },
+        {
+          title: '其他信息',
+          list: ['校园地图', '自我提升', '学习建议', '图书馆'],
+          show: false,
+          svg: '',
+          path: '/other_info'
+        },
+        {
+          title: '关于我们',
+          show: false,
+          svg: '',
+          path: '/about'
+        },
+        {
+          title: '留言板',
+          show: false,
+          svg: '',
+          path: '/'
+        },
+        {
+          title: '返回首页',
+          show: false,
+          svg: '',
+          path: '/about'
+        }
+      ]
+    }
+  },
+  methods: {
+    change: function (index, item) {
+      // 菜单栏展开收缩
+      for (var i = 0; i < this.navs.length; i++) {
+        if (i !== index && this.navs[i].svg) {
+          this.navs[i].show = false
+          this.navs[i].svg = ''
+        }
+      }
+      item.show = !item.show
+      // 变换svg上下图标
+      if (this.navs[index].svg) {
+        if (item.show) {
+          this.navs[index].svg = ''
+        } else {
+          this.navs[index].svg = ''
+        }
+      }
+      // 跳转
+      if (this.navs[index].path !== this.$route.path) {
+        this.$router.push({ path: this.navs[index].path })
+        window.scrollTop(0, 0)
+      }
+    },
+    scrollAnimation (targetY) {
+      // 获取当前位置方法
+
+    },
+    jump (index) {
+      // 将二级标题再原界面中的offsetTop获取并赋值，实现页面内的跳转
+      // 页面滚动动画函数
+      const ScrollTop = (number = 0, time) => {
+        if (!time) {
+          document.body.scrollTop = document.documentElement.scrollTop = number
+          return number
+        }
+        const spacingTime = 20 // 设置循环的间隔时间  值越小消耗性能越高
+        let spacingInex = time / spacingTime // 计算循环的次数
+        let nowTop = document.body.scrollTop + document.documentElement.scrollTop // 获取当前滚动条位置
+        const everTop = (number - nowTop) / spacingInex // 计算每次滑动的距离
+        const scrollTimer = setInterval(() => {
+          if (spacingInex > 0) {
+            spacingInex--
+            ScrollTop(nowTop += everTop)
+          } else {
+            clearInterval(scrollTimer) // 清除计时器
+          }
+        }, spacingTime)
+      }
+
+      ScrollTop(this.$parent.getTop()[index] - 63, 300)
+    }
+  },
+  created () {
+    // 通过url来 修改菜单栏是否展开
+    switch (this.$route.path) {
+      case '/enter_school':
+        this.navs[0].show = true
+        break
+      case '/shool_preparation':
+        this.navs[1].show = true
+        break
+      case '/in_school':
+        this.navs[2].show = true
+        break
+      case '/outside_school':
+        this.navs[3].show = true
+        break
+      case '/other_info':
+        this.navs[4].show = true
+        break
+    }
+  }
 }
 </script>
 
-<style>
+<style scoped>
 #root {
   height: 100%;
   position: fixed;
+  width: 70px;
   background: rgba(0, 0, 0, 0.8);
   color: #f5f5f5;
   font-family: Arial, Helvetica, sans-serif;
-}
-.rootTwo {
-  width: 70px;
-}
-
-#logo {
-  height: 140px;
-  background: url(http://bkzs.sxu.edu.cn/images/2019-07/d451653d059c4a6f843ca1a4a9621b36.gif)
-    no-repeat;
-  background-size: 75%;
-  background-position: 50%;
+  line-height: 1.5;
+  z-index: 3;
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
 }
 
-.logoTwo {
-  opacity: 0;
+#root:hover {
+  width: 180px;
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
 }
 
-#different {
+#new-book {
+  opacity: 1;
   width: 18px;
   padding: 50px 27px;
   position: absolute;
@@ -87,32 +202,99 @@ export default {
   font-size: 16px;
 }
 
-.d_Two {
+#nav-word {
   opacity: 1;
-}
-
-#d_d {
   position: absolute;
   top: 45vh;
   color: #999;
 }
 
-/* #d_d svg {
+#root:hover #new-book,
+#root:hover #nav-word {
+  opacity: 0;
+}
 
-} */
+#logo {
+  opacity: 0;
+  height: 140px;
+  background: url(http://bkzs.sxu.edu.cn/images/2019-07/d451653d059c4a6f843ca1a4a9621b36.gif)
+    no-repeat;
+  background-size: 75%;
+  background-position: center;
+}
+
+#root:hover #logo {
+  opacity: 1;
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
+}
 
 #main {
-    white-space: nowrap;
-    overflow: hidden;
+  white-space: nowrap;
+  overflow: hidden;
+  opacity: 0;
 }
 
-#main a{
-    color: #2d8cf0;
-    background: 0 0;
-    text-decoration: none;
-    outline: 0;
-    cursor: pointer;
-    transition: color .2s ease;
+#root:hover #main {
+  opacity: 1;
 }
 
+#main > ul {
+  margin-top: 10px;
+}
+
+.a-text {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 14px;
+  padding: 10px 43px;
+  font-weight: 600;
+  width: 170px;
+  color: #f5f5f5;
+  letter-spacing: 7px;
+  position: relative;
+  text-align: center;
+  cursor: pointer;
+}
+
+.a-text:hover {
+  color: #099;
+  transition: all 0.75s;
+}
+
+.ul-show {
+  opacity: 0;
+}
+
+#root:hover .ul-show {
+  opacity: 1;
+}
+
+.list-text {
+  opacity: 0;
+  font-size: 14px;
+  height: 0;
+  color: #f5f5f5;
+  padding: 0 48px;
+  letter-spacing: 4px;
+  width: 160px;
+  text-align: center;
+  line-height: 31px;
+  overflow: hidden;
+  cursor: pointer;
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
+}
+.list-text:hover {
+  color: #099;
+  transition: all 0.75s;
+}
+
+.list-hover {
+  opacity: 1;
+  height: 31px !important;
+  -webkit-transition: all 0.75s;
+  transition: all 0.75s;
+}
 </style>

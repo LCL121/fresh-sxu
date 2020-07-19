@@ -1,12 +1,16 @@
 <template>
-  <div class="school-preparation">
-    SchoolPreparation
+  <div id="navRoot">
+    <Banner/>
   </div>
 </template>
 
 <script>
+import Banner from '../components/Banner'
 export default {
   name: 'SchoolPreparation',
+  components: {
+    Banner
+  },
   data () {
     return {
     }

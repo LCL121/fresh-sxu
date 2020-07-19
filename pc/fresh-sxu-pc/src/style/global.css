@@ -7,6 +7,11 @@
     box-sizing: border-box;
 }
 
+body {
+    color: #515a6e;
+    background-color: transparent;
+}
+
 
 /* em 和 i 斜体的文字不倾斜 */
 
@@ -70,4 +75,8 @@ input {
 
 .clearfix {
     *zoom: 1
+}
+
+html {
+    overflow-y: scroll;
 }

@@ -1,0 +1,92 @@
+@font-face {
+    font-family: 'icomoon';
+    src: url('../../public/fonts/icomoon.eot?fvhk49');
+    src: url('../../public/fonts/icomoon.eot?fvhk49#iefix') format('embedded-opentype'), url('../../public/fonts/icomoon.ttf?fvhk49') format('truetype'), url('../../public/fonts/icomoon.woff?fvhk49') format('woff'), url('../../public/fonts/icomoon.svg?fvhk49#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+
+i {
+    font-family: 'icomoon';
+}
+
+p {
+    text-indent: 2em;
+    margin: 19px 0;
+    line-height: 32px;
+}
+
+svg {
+    vertical-align: middle;
+}
+
+.body-w {
+    overflow: hidden;
+    width: calc(100vw - 87px);
+    margin-left: 70px;
+    position: absolute;
+    top: 0;
+    background-color: #fff9e7;
+}
+
+.most-top {
+    height: 68px;
+    background-color: rgb(0, 153, 153);
+}
+
+.before-component::before {
+    position: absolute;
+    height: 53px;
+    width: 140px;
+    line-height: 53px;
+    top: -53px;
+    right: 10vw;
+    text-align: center;
+    border-radius: 10px 10px 0 0;
+    color: rgb(0, 153, 153);
+    background-color: #fff9e7;
+    font-size: 25px;
+}
+
+.text {
+    width: 92%;
+    margin: 10px;
+    font-size: 19px;
+    line-height: 30px;
+    margin-left: 3%;
+    padding: 40px 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.img {
+    height: 700px;
+    width: 100%;
+    background: fixed no-repeat;
+    background-size: calc(100vw - 10px);
+    background-position: 100% 100%;
+}
+
+blockquote {
+    margin: 1em 0!important;
+    padding-left: 20px!important;
+    border-left: 10px solid #b8b2b2;
+}
+
+#toNext {
+    width: 268px;
+    height: 70px;
+    background: rgba(0, 0, 0, .8);
+    color: #fff;
+    border: #000;
+    font-size: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 270px;
+}
+
+.button-animation:hover {
+    transform: scale(1.1) translateX(20px);
+    transition: all .5s;
+    cursor: pointer;
+}

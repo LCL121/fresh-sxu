@@ -4,8 +4,8 @@ import router from './router'
 import store from './store'
 
 //
-import './assets/style/global.css'
-import './assets/style/common.css'
+import './style/common.css'
+import './style/global.css'
 //
 
 Vue.config.productionTip = false
