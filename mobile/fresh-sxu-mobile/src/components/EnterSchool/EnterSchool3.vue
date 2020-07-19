@@ -7,15 +7,15 @@
     <p> </p>
     <p> </p>
     <div class="academy">
-        <ul>
-            <li><a href=""><span>电力工程系</span></a></li>
-            <li><a href=""><span>动力工程系</span></a></li>
-            <li><a href=""><span>自动化系</span></a></li>
-            <li><a href=""><span>土木工程系</span></a></li>
-            <li><a href=""><span>电子信息工程系</span></a></li>
-            <li><a href=""><span>工程管理系</span></a></li>
-            <li><a href=""><span>软件学院</span></a></li>
-        </ul>
+      <ul>
+        <li><a href="http://dlx.sxu.edu.cn/"><span>电力工程系</span></a></li>
+        <li><a href="http://dlgc.sxu.edu.cn/"><span>动力工程系</span></a></li>
+        <li><a href="http://zdh.sxu.edu.cn/"><span>自动化系</span></a></li>
+        <li><a href="http://tm.sxu.edu.cn/"><span>土木工程系</span></a></li>
+        <li><a href="http://dzxx.sxu.edu.cn/"><span>电子信息工程系</span></a></li>
+        <li><a href="http://211.82.16.109/xygg/jgx/chinese/index.asp"><span>工程管理系</span></a></li>
+        <li><a href="http://se.sxu.edu.cn/"><span>软件学院</span></a></li>
+      </ul>
     </div>
   </div>
 </template>
@@ -31,37 +31,37 @@ export default {
 </script>
 
 <style scoped>
-.enter-school3{
-    height:500px;
-    background: #fff9e7;
-    margin:15px;
+.enter-school3 {
+  height: 500px;
+  background: #fff9e7;
+  margin: 15px;
 }
-p{
-    text-indent: 2em;
-    padding: 5px;
-    width:100%;
-    vertical-align:middle;
-    font-size: 16px;
+p {
+  text-indent: 2em;
+  padding: 5px;
+  width: 100%;
+  vertical-align: middle;
+  font-size: 16px;
 }
-.academy{
-    text-align:center;
-    font-weight: bold;
+.academy {
+  text-align: center;
+  font-weight: bold;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    color: #808080;
-    display:inline-block;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  color: #808080;
+  display: inline-block;
 }
 
-li{
-    float: left;
-    margin:10px;
+li {
+  float: left;
+  margin: 10px;
 }
-.academy span{
-    color:#000;
+.academy span {
+  color: #000;
 }
 </style>
