@@ -15,6 +15,10 @@ export default {
   name: 'Start',
   methods: {
     jump () {
+      this.$parent.$children[0].isFirst = true
+      setTimeout(() => {
+        this.$parent.$children[0].isFirst = false
+      }, 2500)
       this.$router.push({ path: '/enter_school' })
     }
   }

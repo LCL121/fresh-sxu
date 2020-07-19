@@ -1,17 +1,17 @@
 <template>
-  <div id="root" class="root-two">
-    <div id="new-book">
+  <div id="root" class="root-two" :style="rootStartStyle">
+    <div id="new-book" :style="navStartStyle">
       新生手册
-      <div id="nav-word">
+      <div id="nav-word" :style="navStartStyle">
         <span>
           <i></i>导航栏
           <i></i>
         </span>
       </div>
     </div>
-    <div id="logo" class="logo-two"></div>
+    <div id="logo" class="logo-two" :style="mainStartStyle"></div>
 
-    <div id="main">
+    <div id="main" :style="mainStartStyle">
       <ul>
         <li v-for="(item,index) in navs" :key="index" @click="change(index,item)">
           <a href="javascript:;" class="a-text">
@@ -19,7 +19,7 @@
             <i>{{item.svg}}</i>
           </a>
 
-          <ul class="ul-show" @click.stop>
+          <ul class="ul-show" @click.stop :style="mainStartStyle">
             <li
               v-for="(navList,index) in item.list"
               :key="index"
@@ -94,7 +94,37 @@ export default {
           svg: '',
           path: '/about'
         }
-      ]
+      ],
+      isFirst: false
+    }
+  },
+  computed: {
+    rootStartStyle () {
+      if (this.isFirst) {
+        return {
+          width: '180px'
+        }
+      } else {
+        return {}
+      }
+    },
+    navStartStyle () {
+      if (this.isFirst) {
+        return {
+          opacity: 0
+        }
+      } else {
+        return {}
+      }
+    },
+    mainStartStyle () {
+      if (this.isFirst) {
+        return {
+          opacity: 1
+        }
+      } else {
+        return {}
+      }
     }
   },
   methods: {

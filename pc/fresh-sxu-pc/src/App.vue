@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Banner/>
+    <Banner v-show="$route.path !== '/'"/>
     <router-view/>
   </div>
 </template>
