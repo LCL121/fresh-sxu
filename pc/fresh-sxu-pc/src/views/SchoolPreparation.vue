@@ -1,6 +1,5 @@
 <template>
   <div id="navRoot">
-    <Banner/>
   </div>
 </template>
 

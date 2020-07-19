@@ -1,6 +1,5 @@
 <template>
   <div id="navRoot">
-    <Banner/>
     <div id="about" class="body-w">
     <h1>关于我们</h1>
     <p>山西大学  新生手册</p>

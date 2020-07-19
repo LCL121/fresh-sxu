@@ -1,6 +1,5 @@
 <template>
   <div id="navRoot">
-    <Banner/>
     <div id="outside-school" class="body-w">
       <div id="most-Top" class="most-top"></div>
       <div id="outside-b" class="before-component">

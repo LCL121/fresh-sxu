@@ -1,17 +1,11 @@
 <template>
 <div id="navRoot">
-  <Banner/>
 </div>
 </template>
 
 <script>
-
-import Banner from '../components/Banner'
 export default {
   name: 'EnterSchool',
-  components: {
-    Banner
-  },
   data () {
     return {
     }

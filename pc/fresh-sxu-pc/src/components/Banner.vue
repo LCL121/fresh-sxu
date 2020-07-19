@@ -118,7 +118,6 @@ export default {
       // 跳转
       if (this.navs[index].path !== this.$route.path) {
         this.$router.push({ path: this.navs[index].path })
-        window.scrollTop(0, 0)
       }
     },
     scrollAnimation (targetY) {
@@ -146,8 +145,7 @@ export default {
           }
         }, spacingTime)
       }
-
-      ScrollTop(this.$parent.getTop()[index] - 63, 300)
+      ScrollTop(this.$parent.$children[1].getTop()[index] - 63, 300)
     }
   },
   created () {
@@ -183,13 +181,11 @@ export default {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
   z-index: 3;
-  -webkit-transition: all 0.75s;
   transition: all 0.75s;
 }
 
 #root:hover {
   width: 180px;
-  -webkit-transition: all 0.75s;
   transition: all 0.75s;
 }
 
@@ -225,7 +221,6 @@ export default {
 
 #root:hover #logo {
   opacity: 1;
-  -webkit-transition: all 0.75s;
   transition: all 0.75s;
 }
 
@@ -283,7 +278,6 @@ export default {
   line-height: 31px;
   overflow: hidden;
   cursor: pointer;
-  -webkit-transition: all 0.75s;
   transition: all 0.75s;
 }
 .list-text:hover {
@@ -294,7 +288,6 @@ export default {
 .list-hover {
   opacity: 1;
   height: 31px !important;
-  -webkit-transition: all 0.75s;
   transition: all 0.75s;
 }
 </style>

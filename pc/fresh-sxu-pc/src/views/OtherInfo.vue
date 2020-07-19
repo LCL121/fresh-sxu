@@ -1,6 +1,5 @@
 <template>
   <div id="navRoot">
-    <Banner />
     <div id="other-info" class="body-w">
       <div id="most-Top" class="most-top"></div>
       <div id="school-map" class="before-component">
