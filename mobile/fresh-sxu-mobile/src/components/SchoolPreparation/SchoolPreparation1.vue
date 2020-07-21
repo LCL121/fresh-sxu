@@ -17,6 +17,7 @@
 <p>军训是步入大学的第一课，是对身体与意志的双重磨练。坚持下来就是一件很开心的事情。</p>
 
 <p>在此期间，也可以促进与新同学的感情，亲身感受教官们的军人的担当与爱国的情怀。十五天的军训生活结束后，相信你会有不一样的收获。</p>
+<div class="blank"></div>
 </div>
 </template>
 
@@ -41,6 +42,10 @@ div.school-preparation1 p{
   padding:8px 10px;
   text-indent: 2em;
   line-height: 25px;
+}
+
+.blank{
+  height:100px;
 }
 
 </style>

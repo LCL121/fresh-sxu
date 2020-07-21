@@ -30,7 +30,7 @@ div{
 }
 
 .content{
-  height: 100vh;
+  height: 80vh;
 }
 
 p{

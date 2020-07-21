@@ -48,6 +48,7 @@
     <p>如果青春有颜色，大概就是绿茵场的颜色。</p>
     <p>挥洒汗水、拼搏青春，你会在这里感受世界第一大运动的魅力，收获珍贵的友情，为你的青春留下浓墨重彩的一笔！</p>
     <p> <img alt="" src="http://bkzs.sxu.edu.cn/images/2019-07/a149a16413fe4f6a850dd2277523e893.jpg"></p>
+    <div class="blank"></div>
     <p> </p>
   </div>
 </template>
@@ -81,6 +82,10 @@ h2{
 
 img{
   width: 100%;
+}
+
+.blank{
+  height:100px;
 }
 
 </style>

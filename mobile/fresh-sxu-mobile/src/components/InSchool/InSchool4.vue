@@ -81,6 +81,7 @@
     <p>目前，协会拥有6台各口径天文望远镜以及大量电子及纸质资料和部分陨石收藏品，并设有大东关校区天文分社。除日常观星活动外，协会还打造了双子座流星雨（曾获央视报道）、中秋节狂欢夜（荣获探月与航天工程褒奖）等诸多品牌活动。</p>
     <p><img alt="" src="http://bkzs.sxu.edu.cn/images/2019-07/6ae179eaafd340c9b9ff02531d9bc747.jpg"></p>
     <p><img alt="" src="http://bkzs.sxu.edu.cn/images/2019-07/5705c1fa3e5e47dd976dd950eac891c4.jpg"></p>
+    <div class="blank"></div>
   </div>
 </template>
 
@@ -113,6 +114,10 @@ h2{
 
 img{
   width: 100%;
+}
+
+.blank{
+  height:100px;
 }
 
 </style>

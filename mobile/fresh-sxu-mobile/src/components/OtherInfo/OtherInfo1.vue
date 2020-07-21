@@ -23,7 +23,7 @@ div{
 }
 
 .content{
-  height: 100vh;
+  height: 70vh;
 }
 
 p{

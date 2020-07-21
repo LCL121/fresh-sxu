@@ -37,6 +37,7 @@
     <p>▷ 自己感兴趣的书籍</p>
     <h4>药品类</h4>
     <p>▷ 创可贴（必备）、防中暑药、感冒药、止泻药（以防水土不服拉肚子）、退烧药</p>
+    <div class="blank"></div>
   </div>
 </template>
 
@@ -77,6 +78,10 @@ h5
 
 span{
   font-weight: bold;
+}
+
+.blank{
+  height:100px;
 }
 
 </style>

@@ -29,7 +29,7 @@ div{
 }
 
 div.text{
-  height: 100vh;
+  height: 70vh;
 }
 
 p{
