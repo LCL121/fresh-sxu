@@ -1,0 +1,43 @@
+/* 最上方的bgi */
+
+.img {
+    position: fixed;
+    background-size: 100% 230px;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 230px;
+}
+
+
+/* 用于填满最上方bgi的背后的空 */
+
+#block {
+    width: 100%;
+    height: 230px;
+}
+
+
+/* 按钮 */
+
+.after::after {
+    position: absolute;
+    top: 253px;
+    right: 0px;
+    width: 66px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    vertical-align: bottom;
+    font-family: 'icomoon';
+    color: #fff;
+    font-size: 25px;
+    border-radius: 5px 0 0 5px;
+    background-color: #009999;
+}
+
+
+/* svg */
+
+.svg {
+    font-family: 'icomoon';
+}
