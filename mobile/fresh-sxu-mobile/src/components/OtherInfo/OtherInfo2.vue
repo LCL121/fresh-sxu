@@ -1,20 +1,20 @@
 <template>
   <div class="onther-info2">
     <div class="content">
-      <p><span class="bold">大学考证的黄金时期，许多证书可以在未来的考研求职起很大的作用。大家一定要规划好自己的生活，尽可能多地考取对自己有提升作用的证书下面是一些证书的小总结</span></p>
-      <h4>NO.1： <span class="normal">英语证书</span></h4>
+      <p><strong>大学考证的黄金时期，许多证书可以在未来的考研求职起很大的作用。大家一定要规划好自己的生活，尽可能多地考取对自己有提升作用的证书下面是一些证书的小总结</strong></p>
+      <h3>NO.1：英语证书</h3>
       <p>大学英语四、六级证书(CET-4，CET-6)：极其重要；</p>
       <p>专业八级：只有英语专业才有资格考，但很多职位要求，如翻译或者外籍主管的助理；</p>
       <p>大学英语四、六级口语证书：证书不重要，能力重要，面试的表达重要；</p>
       <p>英语中高级口译：含金量很高；</p>
       <p>托福(TOFEL)、雅思(IELTS)、剑桥商务英语(BEC)、托业考试(TOEIC)</p>
-      <h4>NO.2： <span class="normal">计算机证书</span></h4>
+      <h3>NO.2：计算机证书</h3>
       <p>全国计算机二级证书：有些大城市申请户口时用，必要条件，如上海市。 此外还有三级和四级。</p>
       <p>其他如：ACCP、MCSA、CCNA，以及名目繁多的专项技能计算机证书，则与未来具体的工作选择相关，不是每个企业都会看重，甚至知道这些证书的。</p>
       <p> 小结：关于计算机技能的各种培训很多，但被企业认同的证书却不多，关键看实际操作技能。</p>
-      <h4>NO.3： <span class="normal">学校证书</span></h4>
+      <h3>NO.3：学校证书</h3>
       <p>包括：奖学金证书、三好学生、优秀毕业生、优秀学生干部等</p>
-      <h4>NO.4： <span class="normal">专业资格证书</span></h4>
+      <h3>NO.4：专业资格证书</h3>
       <p>这方面证书有很多，要看专业和行业情况。</p>
       <p>金融方面的证书：类似CFA、CPA、FRM、ACCA等，分别适合不同的金融方向；</p>
       <p>律师资格证书：适用于未来立志于当律师的同学；</p>
@@ -23,7 +23,7 @@
       <p>报关员证书：有证书才有资格； 人力资源从业资格证书；</p>
       <p>国家司法考试证书；</p>
       <p>具体报考时间 报名方式可在网上查询。</p>
-      <p>详请参考山西大学官网vpn使用指南: <a href="http://its.sxu.edu.cn/cjwt/rdwtjd/58216.htm">http://its.sxu.edu.cn/cjwt/rdwtjd/58216.htm</a></p>
+      <p>详请参考山西大学官网vpn使用指南: <a href="http://its.sxu.edu.cn/cjwt/rdwtjd/58216.htm">山西大学VPN使用指南</a></p>
     </div>
   </div>
 </template>
@@ -49,30 +49,19 @@ div{
 }
 
 p{
-  font-size:15px;
-  padding:8px 10px;
-  line-height: 25px;
+    padding: 5px;
+    width:100%;
+    vertical-align:middle;
+    font-size: 16px;
 }
 
-h4{
+h3{
   padding-left: 10px;
 }
 
-span.bold{
-  font-weight: 600;
-}
-
-/* span.normal{
-  font-weight: 500;
-} */
-
 a{
-  color: purple;
+  color: blue;
   text-decoration: underline;
 }
-
-/* img{
-  width: 100%;
-} */
 
 </style>

@@ -1,11 +1,11 @@
 <template>
   <div class="outside-school3">
     <div class="text">
-      <h4>医院</h4>
-      <p><span>武警山西总队医院</span></p>
+      <h3>医院</h3>
+      <h4>武警山西总队医院</h4>
       <p>地址：师范街36号</p>
       <p>距离学校最近</p>
-      <p><span>山西医科大学第二医院</span></p>
+      <h4>山西医科大学第二医院</h4>
       <p>地址： 太原市杏花岭区五一路382号</p>
       <p>三甲医院</p>
     </div>
@@ -29,13 +29,18 @@ div{
 }
 
 div.text{
-  height: 70vh;
+  height: 100vh;
 }
 
 p{
-  font-size:15px;
-  padding:8px 10px;
-  line-height: 25px;
+    padding: 5px;
+    width:100%;
+    vertical-align:middle;
+    font-size: 16px;
+}
+
+h3{
+  padding-left: 10px;
 }
 
 h4{

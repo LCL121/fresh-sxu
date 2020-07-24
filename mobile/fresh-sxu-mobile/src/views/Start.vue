@@ -35,11 +35,10 @@ export default {
 .start {
   position: relative;
   background: url("http://bkzs.sxu.edu.cn/images/2019-07/2697caa07b054378829225ef872196f2.jpg") no-repeat center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   filter: "progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
   background-size: 200% 100%;
-  overflow: hidden;
 }
 .mask {
   width: 100%;
@@ -55,8 +54,7 @@ export default {
 }
 
 .gohome img {
-  width: 140%;
-  margin-left: -20%;
+  width: 100%;
 }
 
 .gohome span {

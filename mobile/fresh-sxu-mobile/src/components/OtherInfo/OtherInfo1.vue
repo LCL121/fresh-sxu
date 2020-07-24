@@ -1,7 +1,9 @@
 <template>
   <div class="onther-info1">
     <div class="content">
-      <p><img alt="" src="http://bkzs.sxu.edu.cn/images/2019-07/2291bb3010454a9088e9887d92f09f4d.jpg"></p>
+      <p>
+          <img alt="" src="http://bkzs.sxu.edu.cn/images/2019-07/2291bb3010454a9088e9887d92f09f4d.jpg">
+      </p>
     </div>
   </div>
 </template>
@@ -23,7 +25,7 @@ div{
 }
 
 .content{
-  height: 70vh;
+  height: 100vh;
 }
 
 p{
