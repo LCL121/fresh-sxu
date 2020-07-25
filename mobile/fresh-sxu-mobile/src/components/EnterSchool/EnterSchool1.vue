@@ -1,6 +1,10 @@
 <template>
   <div class="enter-school1">
-    <div class="fresh-sxu-content text-content">
+    <div
+      class="fresh-sxu-content text-content"
+      v-html="content"
+    ></div>
+    <!-- <div class="fresh-sxu-content text-content">
         <p>山大的故事</p>
         <p>要从这里说起</p>
         <p>1902年，山西大学堂挂牌开学</p>
@@ -28,39 +32,89 @@
         <p>这是我的山大</p>
         <p>也是你的山大</p>
         <p>山西大学，欢迎你</p>
-    </div>
+    </div> -->
     <div id="tailer">
-
     </div>
   </div>
 </template>
 
 <script>
+import marked from 'marked'
+import { renderConfigMarked } from '@/utils/marked.config.js'
+import markdown from '@/doc/enterSchool/bainianshanda.js'
+
+const renderer = renderConfigMarked({ pClassName: 'hhh' })
+
 export default {
   name: 'EnterSchool1',
   data () {
     return {
+      check: '山西大学'
     }
+  },
+  computed: {
+    content () {
+      var re = new RegExp(this.check, 'g')
+      marked.use({ renderer })
+      const tokens = marked.lexer(markdown)
+      console.log(tokens)
+      for (let i = 0; i < tokens.length; i++) {
+        // console.log(tokens[i])
+        if (tokens[i].type === 'paragraph') {
+          // console.log(tokens[i].tokens)
+          const tmp = tokens[i].tokens
+          for (let j = 0; j < tmp.length; j++) {
+            if (tmp[j].type === 'text') {
+              tmp[j].text = tmp[j].text.replace(re, `<mark>${this.check}</mark>`)
+            }
+          }
+        }
+      }
+      const html = marked.parser(tokens)
+      // console.log(html)
+      return marked(html)
+    }
+  },
+  mounted () {
+    var re = new RegExp(this.check, 'g')
+    marked.use({ renderer })
+    const tokens = marked.lexer(markdown)
+    console.log(tokens)
+    for (let i = 0; i < tokens.length; i++) {
+      // console.log(tokens[i])
+      if (tokens[i].type === 'paragraph') {
+        // console.log(tokens[i].tokens)
+        const tmp = tokens[i].tokens
+        for (let j = 0; j < tmp.length; j++) {
+          if (tmp[j].type === 'text') {
+            tmp[j].text = tmp[j].text.replace(re, `<mark>${this.check}</mark>`)
+          }
+        }
+      }
+    }
+    const html = marked.parser(tokens)
+    // console.log(html)
+    return marked(html)
   }
 }
 </script>
 
 <style scoped>
-.enter-school1{
-    height:900px;
-    background: #fff9e7;
-    margin: 15px;
+.enter-school1 {
+  /* height: 900px; */
+  background: #fff9e7;
+  margin: 15px;
 }
-.text-content p{
-    padding: 5px;
-    width:100%;
-    text-align:center;
-    /*display: table-cell;*/
-    vertical-align:middle;
-    font-size: 16px;
+.text-content >>> p {
+  padding: 5px;
+  width: 100%;
+  text-align: center;
+  /*display: table-cell;*/
+  vertical-align: middle;
+  font-size: 16px;
 }
 
-#tailer{
-    clear:both;
+#tailer {
+  clear: both;
 }
 </style>
