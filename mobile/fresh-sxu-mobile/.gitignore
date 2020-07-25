@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
 /dist
+/fresh_sxu
+/mobile
 inspect_*.js
 
 # local env files
