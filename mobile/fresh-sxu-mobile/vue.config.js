@@ -2,7 +2,7 @@ const path = require('path')
 
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production' ? '/fresh_sxu/mobile' : '/',
-  outputDir: path.resolve(__dirname, 'mobile'),
+  outputDir: path.resolve(__dirname, './fresh_sxu/mobile'),
   pages: {
     index: {
       entry: './src/main.js',
