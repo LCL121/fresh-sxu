@@ -1,5 +1,5 @@
 <template>
-  <div class="in-school6">
+  <!-- <div class="in-school6">
     <h2>山西大学学生会</h2>
     <p>山西大学学生会于1919年5月6日成立，是山西大学青年学生的自治组织，是中华全国学生联合会副主席团体单位、山西省学生联合会主席团体单位。在校党委的正确领导与校团委的具体指导下，在全校同学的大力支持下，搭建起学校联系学生的桥梁和纽带。山西大学学生会按照《中华全国学生联合会章程》、《山西省学生联合会章程》和《山西大学学生会章程》的规定，秉承“全心全意为同学服务”的宗旨，倡导和组织同学们“服务学生、锻炼队伍、成长成才”，致力于将学生会建设成为“同学之家、师生之桥、精英之校”。</p>
     <p>山西大学学生会深入学习贯彻习近平新时代中国特色社会主义思想和党的十九大精神、团的十八大精神，始终秉承“全心全意为同学服务”的工作宗旨，践行“服务学生、锻炼队伍、成长成才”的目标任务，落实“十成战略”“四为模式”的工作思路，努力达成“成体系、巧创新、出成绩”和“四个确保”的工作要求。贯彻服务宗旨，深化服务意识，紧抓服务作风，明确服务方向。协调继承纪念与改革创新，统筹内强能力和外塑形象，结合肃风正气同服务维权。弘扬百年精神，立足学校发展，加强能力锻造，着力组织提升。努力把山西大学学生会建设成为令学生向往、受社会关注、被各界认可的培养高素质青年精英领袖的学生组织，奋力谱写山西大学学生会的百年新篇章。</p>
@@ -46,15 +46,27 @@
     <p><img alt="" src="http://bkzs.sxu.edu.cn/images/2019-07/7a9a851b263b4044b48848e4b8b373ee.jpg">
     <img alt="" src="http://bkzs.sxu.edu.cn/images/2019-07/d999f87ee66141609e01234b4bb825eb.jpg"></p>
     <div class="blank"></div>
+  </div> -->
+  <div class="in-school6" v-html="content">
   </div>
 </template>
 
 <script>
+import marked from 'marked'
+import { classNames, markdown } from '../../doc/inSchool/xueshengzuzhi.js'
+import { renderConfigMarked } from '../../utils/marked.utils'
+
 export default {
   name: 'InSchool6',
   data () {
     return {
+      content: ''
     }
+  },
+  mounted () {
+    const renderer = renderConfigMarked({ ...classNames })
+    marked.use({ renderer })
+    this.content = marked(markdown)
   }
 }
 </script>
@@ -65,22 +77,22 @@ div.in-school6{
   background-color: #fff9e7;
 }
 
-p{
+.in-school6 >>> .markdown-xueshengzuzhi-p{
   font-size:15px;
   padding:8px 10px;
   line-height: 25px;
 }
 
-h2{
+.in-school6 >>> h2{
   font-size: 22.5px;
   padding:10px 10px;
 }
 
-img{
+.in-school6 >>> img{
   width: 100%;
 }
 
-.blank{
+.in-school6 >>> .blank{
   height:100px;
 }
 

@@ -19,7 +19,7 @@ export const renderConfigMarked = ({
 }) => ({
   heading (text, level, raw, slugger) {
     text = text.replace(/<(\/)?u>/g, '')
-    return `<h${level} class="${hClassName}">${text}</h${level}>`
+    return `<h${level} class="${hClassName}${level}">${text}</h${level}>`
   },
   paragraph (text) {
     text = text.replace(/<(\/)?u>/g, '')
@@ -72,6 +72,7 @@ export const getCheckInfo = (renderer, markdown, checkKey, path, pClassName, pag
       }
     }
   }
+  console.log(checked)
   return {
     html: marked.parser(tokens),
     checkedList: checked
