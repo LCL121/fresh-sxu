@@ -57,7 +57,7 @@ export default {
         },
         {
           title: '校内生活',
-          list: ['住在山大', '学生组织', '大型活动', '便利生活'],
+          list: ['住在山大', '吃在山大', '学生组织', '多彩社团', '大型活动', '便利生活'],
           show: false,
           svg: '',
           path: '/in_school'
@@ -82,12 +82,12 @@ export default {
           svg: '',
           path: '/about'
         },
-        {
-          title: '留言板',
-          show: false,
-          svg: '',
-          path: '/'
-        },
+        // {
+        //   title: '留言板',
+        //   show: false,
+        //   svg: '',
+        //   path: '/'
+        // },
         {
           title: '返回首页',
           show: false,

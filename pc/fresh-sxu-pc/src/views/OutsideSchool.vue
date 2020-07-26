@@ -1,7 +1,7 @@
 <template>
   <div id="navRoot">
     <div id="outside-school" class="body-w">
-      <div id="most-Top" class="most-top"></div>
+      <div class="most-top"></div>
       <div id="outside-b" class="before-component">
         <div id="outside-btext" class="text">
           <p>有待补充</p>
@@ -80,7 +80,7 @@
         <div id="serve-img" class="img">
           <button id="toNext" class="button-animation" @click="jump">
             <span>
-              其他消息&nbsp;&nbsp;
+              其他信息&nbsp;&nbsp;
               <i></i>
             </span>
           </button>
@@ -117,11 +117,6 @@ export default {
 </script>
 
 <style scoped>
-i {
-    font-family: 'icomoon';
-    vertical-align: middle;
-}
-
 #outside-b {
   position: relative;
   width: 100%;
@@ -144,7 +139,7 @@ i {
 }
 
 #place-interest::before {
-  content: "名胜古迹";
+  content: "风景名胜";
 }
 
 .a-text {

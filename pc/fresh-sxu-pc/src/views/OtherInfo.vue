@@ -1,7 +1,7 @@
 <template>
   <div id="navRoot">
     <div id="other-info" class="body-w">
-      <div id="most-Top" class="most-top"></div>
+      <div class="most-top"></div>
       <div id="school-map" class="before-component">
         <div id="other-text" class="text"></div>
         <img
@@ -212,7 +212,7 @@ export default {
   },
   methods: {
     jump () {
-      this.$router.push({ path: '/aboout' })
+      this.$router.push({ path: '/about' })
     },
     getTop () {
       var offTop = []
@@ -222,7 +222,6 @@ export default {
       offTop[3] = document.getElementById('library').offsetTop
       return offTop
     }
-
   },
   data () {
     return {}
@@ -231,17 +230,6 @@ export default {
 </script>
 
 <style scoped >
-i {
-  vertical-align: middle;
-}
-
-#school-map,
-#self-improve,
-#learn-experience,
-#library {
-  position: relative;
-}
-
 #school-map::before {
   content: "校园地图";
 }

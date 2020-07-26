@@ -1,6 +1,8 @@
 const path = require('path')
 
 module.exports = {
+  publicPath: process.env.NODE_ENV === 'production' ? '/fresh_sxu/pc' : '/',
+  outputDir: path.resolve(__dirname, './fresh_sxu/pc'),
   pages: {
     index: {
       entry: './src/main.js',
