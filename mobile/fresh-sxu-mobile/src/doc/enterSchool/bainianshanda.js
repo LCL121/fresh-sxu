@@ -1,4 +1,21 @@
-export default `
+// 目前可以按需要配置 以下 class name
+// hClassName h标签
+// pClassName p标签
+// imgClassName img标签
+// aClassName a标签
+// strongClassName strong标签
+export const classNames = {
+  pClassName: 'markdown-bainainshanda-p'
+}
+
+// 页面路由
+export const routePath = '/enter_school'
+
+// 页面块名字
+export const pageName = '百年山大'
+
+// 空行不要去掉
+export const markdown = `
 山大的故事
 
 要从这里说起

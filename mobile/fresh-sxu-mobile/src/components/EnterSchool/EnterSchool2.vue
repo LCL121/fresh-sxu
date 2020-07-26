@@ -1,6 +1,5 @@
 <template>
-  <div v-html="content"></div>
-  <!-- <div class="enter-school2">
+  <div class="enter-school2">
     <p>坞城，山西大学的大部分专业都在此。坞城校区占地面积大，环境优美，是学习生活的不二选择。</p>
     <p>北区文瀛古朴典雅，南区令德现代别致。从北到南，有四季分明的渊智园，充满活力的鸿猷体育场，文科楼学习氛围浓厚，文瀛苑餐厅饭菜美味多样，点缀的小红楼宿舍更为山大增添几分浓厚的历史记忆。走到南操就到了令德区。与文瀛对应的令德餐厅、理科楼、宿舍都有自己的风格。华北最大的图书馆——山西大学图书馆满足你对知识的所有渴求。</p>
     <p> </p>
@@ -29,28 +28,12 @@
             <li><a href="http://hjgc.sxu.edu.cn/"><span>环境工程系</span></a></li>
         </ul>
     </div>
-  </div> -->
+  </div>
 </template>
 
 <script>
-import marked from 'marked'
-import { renderConfigMarked } from '@/utils/marked.config.js'
-import markdown from '@/doc/enterSchool/bainianshanda.js'
-
-const renderer = renderConfigMarked({ pClassName: 'll' })
-
 export default {
-  name: 'EnterSchool2',
-  computed: {
-    content () {
-      marked.use({ renderer })
-      // const tokens = marked.lexer(md)
-      // console.log(tokens)
-      // const html = marked.parser(tokens)
-      // console.log(html)
-      return marked(markdown)
-    }
-  }
+  name: 'EnterSchool2'
 }
 </script>
 

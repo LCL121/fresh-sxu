@@ -40,61 +40,29 @@
 
 <script>
 import marked from 'marked'
-import { renderConfigMarked } from '@/utils/marked.config.js'
-import markdown from '@/doc/enterSchool/bainianshanda.js'
-
-const renderer = renderConfigMarked({ pClassName: 'hhh' })
+import { renderConfigMarked, getCheckInfo, scrollToChecked } from '@/utils/marked.utils.js'
+import { markdown, classNames, routePath, pageName } from '@/doc/enterSchool/bainianshanda.js'
 
 export default {
   name: 'EnterSchool1',
   data () {
     return {
+      content: '',
       check: '山西大学'
     }
   },
-  computed: {
-    content () {
-      var re = new RegExp(this.check, 'g')
-      marked.use({ renderer })
-      const tokens = marked.lexer(markdown)
-      console.log(tokens)
-      for (let i = 0; i < tokens.length; i++) {
-        // console.log(tokens[i])
-        if (tokens[i].type === 'paragraph') {
-          // console.log(tokens[i].tokens)
-          const tmp = tokens[i].tokens
-          for (let j = 0; j < tmp.length; j++) {
-            if (tmp[j].type === 'text') {
-              tmp[j].text = tmp[j].text.replace(re, `<mark>${this.check}</mark>`)
-            }
-          }
-        }
-      }
-      const html = marked.parser(tokens)
-      // console.log(html)
-      return marked(html)
-    }
-  },
   mounted () {
-    var re = new RegExp(this.check, 'g')
-    marked.use({ renderer })
-    const tokens = marked.lexer(markdown)
-    console.log(tokens)
-    for (let i = 0; i < tokens.length; i++) {
-      // console.log(tokens[i])
-      if (tokens[i].type === 'paragraph') {
-        // console.log(tokens[i].tokens)
-        const tmp = tokens[i].tokens
-        for (let j = 0; j < tmp.length; j++) {
-          if (tmp[j].type === 'text') {
-            tmp[j].text = tmp[j].text.replace(re, `<mark>${this.check}</mark>`)
-          }
-        }
-      }
+    const renderer = renderConfigMarked({ pClassName: classNames.pClassName })
+    if (this.check !== '') {
+      const { html, checkedList } = getCheckInfo(renderer, markdown, this.check, routePath, classNames.pClassName, pageName)
+      this.content = html
+      // 选择第几个
+      const checkedIndex = 2
+      scrollToChecked(this, checkedList, checkedIndex)
+    } else {
+      marked.use({ renderer })
+      this.content = marked(markdown)
     }
-    const html = marked.parser(tokens)
-    // console.log(html)
-    return marked(html)
   }
 }
 </script>
