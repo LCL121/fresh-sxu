@@ -42,7 +42,7 @@ export default {
 
 </script>
 
-<style>
+<style  scoped>
 #returnTop {
   width: 100%;
   height: 40px;

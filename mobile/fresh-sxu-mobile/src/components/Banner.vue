@@ -1,19 +1,24 @@
 <template>
   <div id="nav">
-    <div id="nav-svg" class="svg" @click="IsShowMain() "></div>
-    <div id="nav-root" v-if="isShow">
+    <div id="nav-svg" class="iconfont" @click="isShow=!isShow" v-show="!isShow">&#xe601;</div>
+    <div id="navs-svg" class="iconfont" @click="isShow=!isShow" v-show="isShow">&#xe601;</div>
+    <div id="nav-root" class="nav" :class="{'nav-hover': isShow}">
       <div id="main">
-        <ul id="main-ul">
-          <li v-for="(item,index) in navs" :key="index" @click="change(index,item)">
+        <ul id="main-ul" >
+          <li v-for="(item,index) in navs" :key="index" @click="change(index,item)"  >
             <div class="first-d">
               {{item.title}}
-              <i class="svg">{{item.svg}}</i>
+              <i class="svg svgs">{{item.svg}}</i>
             </div>
-            <transition name="fade">
-              <ul id="second-ul" v-show="item.show">
-                <li class="second-li" v-for="(it,index) in item.list" :key="index">{{it}}</li>
-              </ul>
-            </transition>
+            <ul >
+              <li
+                class="second-li"
+                :class="{'second-hover': item.show}"
+                v-for="(it,index) in item.list"
+                :key="index" @click="jump(index)"
+                @click.stop
+              >{{it}}</li>
+            </ul>
           </li>
         </ul>
       </div>
@@ -24,6 +29,12 @@
 <script>
 export default {
   name: 'Banner',
+  props: {
+    getTop: {
+      type: Function,
+      default: null
+    }
+  },
   data () {
     return {
       isShow: false,
@@ -86,11 +97,12 @@ export default {
     }
   },
   methods: {
+
     IsShowMain () {
       this.isShow = !this.isShow
-    //   this.document.on('touchstart', function (e) {
-    //     console.log()
-    //   })
+      //   this.document.on('touchstart', function (e) {
+      //     console.log()
+      //   })
     },
 
     change (index, item) {
@@ -138,32 +150,59 @@ export default {
           }
         }, spacingTime)
       }
-      ScrollTop(this.$parent.$children[1].getTop()[index] - 63, 300)
+      ScrollTop(this.getTop()[index], 300)
+      this.isShow = false
+    }
+  },
+  created () {
+    // 通过url来 修改菜单栏是否展开
+    switch (this.$route.path) {
+      case '/enter_school':
+        this.navs[0].show = true
+        break
+      case '/shool_preparation':
+        this.navs[1].show = true
+        break
+      case '/in_school':
+        this.navs[2].show = true
+        break
+      case '/outside_school':
+        this.navs[3].show = true
+        break
+      case '/other_info':
+        this.navs[4].show = true
+        break
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 #nav-root {
   position: fixed;
   left: 0;
   top: 0;
-  width: 140px;
   height: 100vh;
   background-color: #009999;
-  opacity: 0.8;
   color: #fff;
   z-index: 2;
   overflow: hidden;
 }
 
 #nav-svg {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 18px;
+  color: #fff;
+  z-index: 3;
+}
+
+#navs-svg {
   position: fixed;
   top: 20px;
   left: 20px;
   font-size: 18px;
-  vertical-align: middle;
   color: #fff;
   z-index: 3;
 }
@@ -172,28 +211,53 @@ export default {
   margin-top: 80px;
 }
 
+.nav {
+  opacity: 0;
+  width: 0;
+  transition: all 0.75s;
+}
+
+.nav-hover {
+  opacity: 1;
+  width: 140px;
+  transition: all 0.75s;
+}
+
+.svgs {
+  vertical-align: middle;
+}
+
 .first-d {
   display: block;
   width: 100%;
   line-height: 20px;
+  height: 50px;
   text-align: left;
   font-size: 18px;
   text-indent: 1.5em;
-  margin: 10.5px 0;
+  padding: 15px 0;
+  white-space:nowrap;
+}
+
+.ul-show {
+  opacity: 0;
 }
 
 .second-li {
+  opacity: 0;
   text-indent: 1.5em;
+  height: 0;
   font-size: 18px;
-  padding: 7.5px 0;
   color: #009999;
   background-color: #fff;
+  transition: all 0.75s;
+  white-space:nowrap;
 }
 
-/* .fade-enter-active, .fade-leave-active {
-    transition: all .5s ease;
+.second-hover {
+  height: 39px !important ;
+  opacity: 1;
+  transition: all 0.75s;
+  padding: 7.5px 0;
 }
-.fade-enter, .fade-leave-to  .fade-leave-active, 2.1.8 版本以下  {
-    height: 0;
-} */
 </style>

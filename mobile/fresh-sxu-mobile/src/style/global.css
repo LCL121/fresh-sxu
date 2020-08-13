@@ -7,6 +7,20 @@
     font-display: block;
 }
 
+@font-face {
+    font-family: 'iconfont';
+    src: url('../../public/fonts/iconfont.eot');
+    src: url('../../public/fonts/iconfont.eot?#iefix') format('embedded-opentype'), url('../../public/fonts/iconfont.woff2') format('woff2'), url('../../public/fonts/iconfont.woff') format('woff'), url('../../public/fonts/iconfont.ttf') format('truetype'), url('../../public/fonts/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
 
 /* 把我们所有标签的内外边距清零 */
 

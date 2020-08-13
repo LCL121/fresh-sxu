@@ -1,32 +1,53 @@
 <template>
   <div id="enter-school">
-    <Banner/>
-    <div id="bgi" class="img after"></div>
-    <div id="block"></div>
-    <!-- <div style="position: relative;">
-        <div style="position: absolute; top: 30px; left: 20px; font-size: 1rem; color: white;">
-        <router-link to="/home">&lt; 返回主菜单</router-link></div>
-        <div class="bgi"></div>
-        <h1 style="position: absolute; bottom: 20px; left: 20px; font-size: 1.1rem; color: white;">走进山大</h1>
+    <Banner   :getTop='getTop' />
+    <div id="welcome">
+    <div id="welcome-img" class="img">
+      <span id="right-next" class="iconfont next"
+      @click="JumpNext()"
+      >&#xe602;</span>
     </div>
-    <div id="naver">
-        <ul>
-            <li @click="select(1)"><span class="item1">百年山大</span></li>
-            <li @click="select(2)"><span class="item2">坞城校区</span></li>
-            <li @click="select(3)"><span class="item3">大东关校区</span></li>
-            <li @click="select(4)"><span class="item4">东山校区</span></li>
-        </ul>
+    <div  class="text">
+        <div class="title">百年山大</div>
+        <div id="welcome-text" class="main-text">
+          <p>山大的故事</p>
+          <p>要从这里说起</p>
+          <p>1902年，山西大学堂挂牌开学</p>
+          <p>以学习近代学问之身</p>
+          <p>怀增中西合璧、文理并重之愿</p>
+          <p>正如校歌所唱：勤耕四野，勇拓八荒</p>
+          <p>山大人坚守“中西汇通，自强报国”的信念</p>
+          <p>走过百年风华</p>
+          <p>今天的山大</p>
+          <p>也要从这里说起</p>
+          <p>以“教授高深学术，养成硕学闳材”为己任</p>
+          <p>秉承“求真至善、登崇俊良”的优良传统</p>
+          <p>踏上中国高等教育的探索之途</p>
+          <p>在这里，国学良史，西文科学，交相辉映</p>
+          <p>在这里，名师大家，科学巨擘，荟萃一堂</p>
+          <p>过去，人文学术，理工实验，成绩斐然</p>
+          <p>如今，理工共进，人文日新，再创辉煌</p>
+          <p>求实与创新</p>
+          <p>求真与至善</p>
+          <p>融入在山大人日常生活里</p>
+          <p>激励着莘莘学子</p>
+          <p>埋首在学习与实践的征途之上</p>
+          <p>百年之路，一如既往</p>
+          <p>百年风华，薪火相传</p>
+          <p>这是我的山大</p>
+          <p>也是你的山大</p>
+          <p>山西大学，欢迎你</p>
+        </div>
+      </div>
     </div>
-    <enter-school1 v-if="selected === 1"></enter-school1>
-    <enter-school2 v-else-if="selected === 2"></enter-school2>
-    <enter-school3 v-else-if="selected === 3"></enter-school3>
-    <enter-school4 v-else></enter-school4> -->
+    <div id="wuC">
+       <div id="wuc-img" class="img"></div>
+    </div>
 
-<!-- 测试底部 -->
-  <div id="blocks"></div>
-<ReturnTop/>
-  </div>
-
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <MessageBoard/>
+    <ReturnTop/>
+</div>
 </template>
 
 <script>
@@ -36,6 +57,7 @@ import EnterSchool3 from '@/components/EnterSchool/EnterSchool3.vue'
 import EnterSchool4 from '@/components/EnterSchool/EnterSchool4.vue'
 import ReturnTop from '@/components/ReturnTop.vue'
 import Banner from '@/components/Banner.vue'
+import MessageBoard from '@/components/MessageBoard.vue'
 
 export default {
   name: 'EnterSchool',
@@ -51,35 +73,40 @@ export default {
     EnterSchool3,
     EnterSchool4,
     Banner,
-    ReturnTop
+    ReturnTop,
+    MessageBoard
   },
   methods: {
-    select (index) {
-      this.selected = index
+    JumpNext () {
+      this.$router.push({ path: '/shool_preparation' })
+    },
+    getTop () {
+      var offTop = []
+      offTop[0] = 0
+      // 获取#weclome距离上边距的 px
+      offTop[1] = document.getElementById('wuC').offsetTop
+      //
+      // offTop[2] =
+      return offTop
     }
   }
+
 }
 </script>
 
 <style scoped>
-/* #enter_school {
+#enter_school {
   width: 100%;
   height: 100%;
-} */
-
-#bgi {
-  /* background-image: url("../../public/img/cmqxs4.jpg");/
-   */
-   background-image: url(http://bkzs.sxu.edu.cn/images/2019-07/a43bb5de8a31408c8003f0873c033112.jpg);
 }
 
-#bgi::after{
-  content: '\ea51';
+#welcome-img {
+  background-image: url(../../public/img/enter-school.jpg);
 }
 
-#blocks{
-  width: 300px;
-  height: 1222px;
+#wuc-img{
+  background-image: url(../../public/img/wu.jpg);
+  margin-top: 50px;
 }
 
 </style>

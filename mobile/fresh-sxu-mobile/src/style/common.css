@@ -1,25 +1,18 @@
 /* 最上方的bgi */
 
 .img {
-    position: fixed;
-    background-size: 100% 230px;
-    background-repeat: no-repeat;
+    position: relative;
+    height: 273px;
     width: 100%;
-    height: 230px;
+    background: fixed no-repeat;
+    background-size: calc(100vw);
+    background-position: 0% 0%;
 }
 
 
-/* 用于填满最上方bgi的背后的空 */
+/* 右箭头按钮 */
 
-#block {
-    width: 100%;
-    height: 230px;
-}
-
-
-/* 按钮 */
-
-.after::after {
+.next {
     position: absolute;
     top: 253px;
     right: 0px;
@@ -28,10 +21,7 @@
     line-height: 38px;
     text-align: center;
     vertical-align: bottom;
-    font-family: 'icomoon';
     color: #fff;
-    font-size: 25px;
-    border-radius: 5px 0 0 5px;
     background-color: #009999;
 }
 
@@ -40,4 +30,29 @@
 
 .svg {
     font-family: 'icomoon';
+}
+
+
+/* 正文 */
+
+.text {
+    margin: 0 8%
+}
+
+
+/* 正文小标题 */
+
+.title {
+    color: #000;
+    font-size: 24px;
+    margin: 20px 0;
+    letter-spacing: 3px;
+}
+
+
+/* 正文 */
+
+.main-text {
+    color: #515a6e;
+    letter-spacing: 1px;
 }
