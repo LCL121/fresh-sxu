@@ -1,9 +1,17 @@
 <template>
   <div class="onther-info1">
-    <div class="content">
-      <p>
-          <img alt="" src="http://bkzs.sxu.edu.cn/images/2019-07/2291bb3010454a9088e9887d92f09f4d.jpg">
-      </p>
+    <div id="school-map">
+      <div id="school-map-img" class="img">
+        <span id="right-next" class="iconfont next"
+        @click="JumpNext()"
+        >&#xe602;</span>
+      </div>
+    <div  class="text">
+        <div class="title">校园地图</div>
+      </div>
+    <div class="p-img">
+      <img alt="" src="http://bkzs.sxu.edu.cn/images/2019-07/2291bb3010454a9088e9887d92f09f4d.jpg">
+    </div>
     </div>
   </div>
 </template>
@@ -20,26 +28,8 @@ export default {
 
 <style scoped>
 
-div{
-  background-color: #fff9e7;
-}
-
-.content{
-  height: 100vh;
-}
-
-p{
-  font-size:15px;
-  padding:8px 10px;
-  line-height: 25px;
-}
-
-/* h4{
-  padding-left: 10px;
-} */
-
-img{
-  width: 100%;
+#school-map-img {
+  background-image: url(../../../public/img/school-map.jpg);
 }
 
 </style>

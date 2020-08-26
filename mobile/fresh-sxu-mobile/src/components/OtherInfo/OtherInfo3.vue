@@ -1,15 +1,17 @@
 <template>
     <div class="onther-info3">
-        <div class="content">
-        <p>美国著名教育批评家和改革者亚伯拉罕·弗莱克斯纳认为” 大学不是孤立的事物，不是老古董,不会将各种新事物拒之门外;相反，它是时代的表现，是对现在和未来都会产生影响的一种力量，大学不是风向标，不能什么流行就迎合什么，大学应该不断满足社会的需求，而不是欲望”。</p>
-
-        <p>同时他也认为大学应该紧跟时代做出变化，但也应有相应的"度”，只是满足"needs" ，而不是"wants"。</p>
-
-        <p>以下是有关大学生活的一些建议</p>
-        <ol start="1">
+        <div id="learn-experience">
+      <div id="learn-experience-img" class="img"></div>
+      <div class="text">
+        <div class="title">学习建议</div>
+        <div class="main-text">
+          <p>美国著名教育批评家和改革者亚伯拉罕·弗莱克斯纳认为” 大学不是孤立的事物，不是老古董,不会将各种新事物拒之门外;相反，它是时代的表现，是对现在和未来都会产生影响的一种力量，大学不是风向标，不能什么流行就迎合什么，大学应该不断满足社会的需求，而不是欲望”。</p>
+          <p>同时他也认为大学应该紧跟时代做出变化，但也应有相应的"度”，只是满足"needs" ，而不是"wants"。</p>
+          <p>以下是有关大学生活的一些建议</p>
+          <ol start="1">
             <li>
-                <p class="little-title">不要拘泥于学校的平台，学会走出去</p>
-                <p>面对瞬息万变的这个时代，课堂上所学习的东西是远远不能满足我们的，加上互联网上有着许多的学习资源，我们完全可以利用身边的资源去不断地去学习，走出去探索新的领域，外面的世界更加的广阔。</p>
+              <p class="little-title">不要拘泥于学校的平台，学会走出去</p>
+              <p>面对瞬息万变的这个时代，课堂上所学习的东西是远远不能满足我们的，加上互联网上有着许多的学习资源，我们完全可以利用身边的资源去不断地去学习，走出去探索新的领域，外面的世界更加的广阔。</p>
             </li>
             <li>
                 <p class="little-title">有自己的目标，早早的为自己规划</p>
@@ -34,12 +36,14 @@
                 <p>③运动可以增强人的意志品质，培养人的良好习惯</p>
                 <p>④运动可以扩大自己的社交范围，增加自己和他人交流的机会。</p>
             </li>
-        </ol>
-        <p>（文字来源：知乎）</p>
-        <p>下面还有几个接地气的回答</p>
-        <p><a href="https://www.zhihu.com/question/281895917/answer/588128474">有什么好的建议给即将上大学的学生？ - 巴啦啦的回答 - 知乎</a></p>
-        <p><a href="https://www.zhihu.com/question/281895917/answer/484100307">有什么好的建议给即将上大学的学生？ - 李情画的回答 - 知乎</a></p>
-        <p><a href="https://www.zhihp.com/qpestion/28966967/answer/149755469">如何高质量地走完大学四年？ - 外向的孤独患者的回答 - 知乎</a></p>
+          </ol>
+          <p>（文字来源：知乎）</p>
+          <p>下面还有几个接地气的回答</p>
+          <p><a href="https://www.zhihu.com/question/281895917/answer/588128474">有什么好的建议给即将上大学的学生？ - 巴啦啦的回答 - 知乎</a></p>
+          <p><a href="https://www.zhihu.com/question/281895917/answer/484100307">有什么好的建议给即将上大学的学生？ - 李情画的回答 - 知乎</a></p>
+          <p><a href="https://www.zhihp.com/qpestion/28966967/answer/149755469">如何高质量地走完大学四年？ - 外向的孤独患者的回答 - 知乎</a></p>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -56,40 +60,9 @@ export default {
 
 <style scoped>
 
-div{
-  background-color: #fff9e7;
-}
-
-.content{
-    padding:10px;
-}
-
-p{
-    /*text-indent: 2em;*/
-    padding: 5px;
-    width:100%;
-    vertical-align:middle;
-    font-size: 16px;
-}
-
-/*ol{
-    padding-left: 20px;
-}*/
-
-ol li{
-
-    list-style-type:decimal;
-    list-style-position:inside;
-}
-
-.little-title{
-    display: inline;
-    font-weight: 400;
-}
-
-a{
-  color: blue;
-  text-decoration: underline;
+#learn-experience-img {
+  background-image: url(../../../public/img/learn-experience.jpg);
+  margin-top: 50px;
 }
 
 </style>
