@@ -1,4 +1,5 @@
 const gulp = require('gulp');
+const del = require('delete');
 const exec = require('child_process').exec;
 
 gulp.task('buildpc', function (cb) {
@@ -38,10 +39,10 @@ gulp.task('copyother', function () {
     .pipe(gulp.dest('fresh_sxu/'));
 });
 
-gulp.task('buildall', gulp.parallel('buildpc', 'buildmobile', 'copyother', function (cb) {
-  cb();
-}));
+gulp.task('buildall', gulp.series(function (cb) {
+  del('fresh_sxu', cb);
+}, gulp.parallel('buildpc', 'buildmobile', 'copyother')));
 
-gulp.task('copyall', gulp.parallel('copypc', 'copymobile', 'copyother', function (cb) {
-  cb();
-}));
+gulp.task('copyall', gulp.series(function (cb) {
+  del('fresh_sxu', cb);
+}, gulp.parallel('copypc', 'copymobile', 'copyother')));
