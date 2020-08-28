@@ -47,8 +47,6 @@ export default {
 }
 .gohome {
   position: relative;
-  /* background-image: url("http://bkzs.sxu.edu.cn/images/2019-07/25bf5b5aabbd4037857b86811838ec62.png"); */
-  /* background-repeat: no-repeat; */
   width: 100%;
   top:4rem;
 }

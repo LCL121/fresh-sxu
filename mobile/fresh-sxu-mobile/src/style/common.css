@@ -1,0 +1,58 @@
+/* 最上方的bgi */
+
+.img {
+    position: relative;
+    height: 273px;
+    width: 100%;
+    background: fixed no-repeat;
+    background-size: calc(100vw);
+    background-position: 0% 0%;
+}
+
+
+/* 右箭头按钮 */
+
+.next {
+    position: absolute;
+    top: 253px;
+    right: 0px;
+    width: 66px;
+    height: 38px;
+    line-height: 38px;
+    text-align: center;
+    vertical-align: bottom;
+    color: #fff;
+    background-color: #009999;
+}
+
+
+/* svg */
+
+.svg {
+    font-family: 'icomoon';
+}
+
+
+/* 正文 */
+
+.text {
+    margin: 0 8%
+}
+
+
+/* 正文小标题 */
+
+.title {
+    color: #000;
+    font-size: 24px;
+    margin: 20px 0;
+    letter-spacing: 3px;
+}
+
+
+/* 正文 */
+
+.main-text {
+    color: #515a6e;
+    letter-spacing: 1px;
+}
