@@ -1,25 +1,28 @@
 <template>
   <div id="in-school">
-    <Banner   :getTop='getTop' />
-    <InSchool1/>
-    <InSchool2/>
-    <InSchool3/>
-    <InSchool4/>
-    <InSchool5/>
-    <InSchool6/>
+    <span id="right-next"
+          class="iconfont next"
+          @click="JumpNext()">&#xe602;</span>
+    <Banner :getTop='getTop' />
+    <InSchool1 />
+    <InSchool2 />
+    <InSchool3 />
+    <InSchool4 />
+    <InSchool5 />
+    <InSchool6 />
 
-    <MessageBoard/>
-    <ReturnTop/>
-</div>
+    <MessageBoard />
+    <ReturnTop />
+  </div>
 </template>
 
 <script>
-import InSchool1 from '@/components/InSchool/InSchool1.vue'
-import InSchool2 from '@/components/InSchool/InSchool2.vue'
-import InSchool3 from '@/components/InSchool/InSchool3.vue'
-import InSchool4 from '@/components/InSchool/InSchool4.vue'
-import InSchool5 from '@/components/InSchool/InSchool5.vue'
-import InSchool6 from '@/components/InSchool/InSchool6.vue'
+import InSchool1 from '@/components/InSchool/activity.vue'
+import InSchool2 from '@/components/InSchool/association.vue'
+import InSchool3 from '@/components/InSchool/convenience.vue'
+import InSchool4 from '@/components/InSchool/eat.vue'
+import InSchool5 from '@/components/InSchool/live.vue'
+import InSchool6 from '@/components/InSchool/organization.vue'
 import ReturnTop from '@/components/ReturnTop.vue'
 import Banner from '@/components/Banner.vue'
 import MessageBoard from '@/components/MessageBoard.vue'
@@ -44,18 +47,20 @@ export default {
     MessageBoard
   },
   methods: {
-
     getTop () {
       var offTop = []
       offTop[0] = 0
       // 获取#weclome距离上边距的 px
       //
-      offTop[1] = document.getElementById('eat').offsetTop
-      offTop[2] = document.getElementById('organization').offsetTop
-      offTop[3] = document.getElementById('association').offsetTop
-      offTop[4] = document.getElementById('activity').offsetTop
-      offTop[5] = document.getElementById('convenience').offsetTop
+      offTop[1] = document.getElementById('organization').offsetTop
+      offTop[2] = document.getElementById('convenience').offsetTop
+      offTop[3] = document.getElementById('eat').offsetTop
+      offTop[4] = document.getElementById('live').offsetTop
+      offTop[5] = document.getElementById('association').offsetTop
       return offTop
+    },
+    JumpNext () {
+      this.$router.push({ path: '/outside_school' })
     }
 
   }
@@ -82,5 +87,4 @@ h2 {
   font-size: 18px;
   margin: 10px 0;
 }
-
 </style>
