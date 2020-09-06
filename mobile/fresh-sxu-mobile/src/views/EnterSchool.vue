@@ -1,22 +1,25 @@
 <template>
   <div id="enter-school">
-    <Banner   :getTop='getTop' />
+    <span id="right-next"
+          class="iconfont next"
+          @click="JumpNext()">&#xe602;</span>
+    <Banner :getTop='getTop' />
 
-    <EnterSchool1/>
-    <EnterSchool2/>
-    <EnterSchool3/>
-    <EnterSchool4/>
+    <welcome />
+    <wu />
+    <ddg />
+    <ds />
 
-    <MessageBoard/>
-    <ReturnTop/>
-</div>
+    <MessageBoard />
+    <ReturnTop />
+  </div>
 </template>
 
 <script>
-import EnterSchool1 from '@/components/EnterSchool/EnterSchool1.vue'
-import EnterSchool2 from '@/components/EnterSchool/EnterSchool2.vue'
-import EnterSchool3 from '@/components/EnterSchool/EnterSchool3.vue'
-import EnterSchool4 from '@/components/EnterSchool/EnterSchool4.vue'
+import welcome from '@/components/EnterSchool/welcome.vue'
+import wu from '@/components/EnterSchool/wu.vue'
+import ddg from '@/components/EnterSchool/ddg.vue'
+import ds from '@/components/EnterSchool/ds.vue'
 import ReturnTop from '@/components/ReturnTop.vue'
 import Banner from '@/components/Banner.vue'
 import MessageBoard from '@/components/MessageBoard.vue'
@@ -30,16 +33,18 @@ export default {
     }
   },
   components: {
-    EnterSchool1,
-    EnterSchool2,
-    EnterSchool3,
-    EnterSchool4,
+    welcome,
+    wu,
+    ddg,
+    ds,
     Banner,
     ReturnTop,
     MessageBoard
   },
   methods: {
-
+    JumpNext () {
+      this.$router.push({ path: '/shool_preparation' })
+    },
     getTop () {
       var offTop = []
       offTop[0] = 0
@@ -57,5 +62,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>

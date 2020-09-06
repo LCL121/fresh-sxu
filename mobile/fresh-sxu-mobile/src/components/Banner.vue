@@ -1,23 +1,34 @@
 <template>
   <div id="nav">
-    <div id="nav-svg" class="iconfont" @click="isShow=!isShow" v-show="!isShow">&#xe601;</div>
-    <div id="navs-svg" class="iconfont" @click="isShow=!isShow" v-show="isShow">&#xe601;</div>
-    <div id="nav-root" class="nav" :class="{'nav-hover': isShow}">
+    <div id="nav-svg"
+         class="iconfont"
+         @click="isShow=!isShow"
+         v-show="!isShow">&#xe601;</div>
+    <div id="navs-svg"
+         class="iconfont"
+         @click="isShow=!isShow"
+         v-show="isShow">&#xe601;</div>
+    <div id="nav-root"
+         class="nav"
+         :class="{'nav-hover': isShow}">
       <div id="main">
-        <ul id="main-ul" >
-          <li v-for="(item,index) in navs" :key="index" @click="change(index,item)"  >
-            <div class="first-d">
+        <ul id="main-ul">
+          <li v-for="(item,index) in navs"
+              :key="index">
+            <div class="first-d"
+                 @click="jumpPage(index)">
               {{item.title}}
-              <i class="svg svgs">{{item.svg}}</i>
+              <i class="svg svgs"
+                 @click.stop
+                 @click="change(index,item)">{{item.svg}}</i>
             </div>
-            <ul >
-              <li
-                class="second-li"
-                :class="{'second-hover': item.show}"
-                v-for="(it,index) in item.list"
-                :key="index" @click="jump(index)"
-                @click.stop
-              >{{it}}</li>
+            <ul>
+              <li class="second-li"
+                  :class="{'second-hover': item.show}"
+                  v-for="(it,indexs) in item.list"
+                  :key="indexs"
+                  @click.stop
+                  @click="jump(index,indexs)">{{it}}</li>
             </ul>
           </li>
         </ul>
@@ -56,7 +67,7 @@ export default {
         },
         {
           title: '校内生活',
-          list: ['住在山大', '学生组织', '大型活动', '便利生活'],
+          list: ['大型活动', '多彩社团', '便利生活', '吃在山大', '住在山大', '学校组织'],
           show: false,
           svg: '',
           path: '/in_school'
@@ -70,7 +81,7 @@ export default {
         },
         {
           title: '其他信息',
-          list: ['校园地图', '自我提升', '学习建议', '图书馆'],
+          list: ['学习建议', '图书馆', '学校地图', '自我提示'],
           show: false,
           svg: '',
           path: '/other_info'
@@ -122,13 +133,19 @@ export default {
           this.navs[index].svg = ''
         }
       }
-      // 跳转
-      if (this.navs[index].path !== this.$route.path) {
-        this.$router.push({ path: this.navs[index].path })
-      }
+      // // 跳转
+      // if (this.navs[index].path !== this.$route.path) {
+      //   this.$router.push({ path: this.navs[index].path })
+      // }
     },
 
-    jump (index) {
+    jump (index, indexs) {
+      // // 跳转
+      if (this.navs[index].path !== this.$route.path) {
+        this.$router.push({ path: this.navs[index].path })
+        console.log(this.navs[index].path)
+        console.log(this.$route.path)
+      }
       // 将二级标题再原界面中的offsetTop获取并赋值，实现页面内的跳转
       // 页面滚动动画函数
       const ScrollTop = (number = 0, time) => {
@@ -150,8 +167,13 @@ export default {
           }
         }, spacingTime)
       }
-      ScrollTop(this.getTop()[index], 300)
+      ScrollTop(this.getTop()[indexs], 300)
       this.isShow = false
+    },
+    jumpPage (index) {
+      if (this.navs[index].path !== this.$route.path) {
+        this.$router.push({ path: this.navs[index].path })
+      }
     }
   },
   created () {
@@ -236,7 +258,7 @@ export default {
   font-size: 18px;
   text-indent: 1.5em;
   padding: 15px 0;
-  white-space:nowrap;
+  white-space: nowrap;
 }
 
 .ul-show {
@@ -251,7 +273,7 @@ export default {
   color: #009999;
   background-color: #fff;
   transition: all 0.75s;
-  white-space:nowrap;
+  white-space: nowrap;
 }
 
 .second-hover {

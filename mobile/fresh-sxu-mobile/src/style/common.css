@@ -14,7 +14,7 @@
 
 .next {
     position: absolute;
-    top: 253px;
+    top: 231px;
     right: 0px;
     width: 66px;
     height: 38px;
@@ -23,6 +23,7 @@
     vertical-align: bottom;
     color: #fff;
     background-color: #009999;
+    z-index: 2;
 }
 
 
@@ -42,7 +43,8 @@
 
 /* 正文小标题 */
 
-.title {
+.markdown-h2 {
+    font-weight: 400;
     color: #000;
     font-size: 24px;
     margin: 20px 0;
@@ -52,7 +54,17 @@
 
 /* 正文 */
 
-.main-text {
+
+.markdown-welcome-p {
     color: #515a6e;
     letter-spacing: 1px;
+}
+
+.markdown-a {
+    color: #69c;
+}
+
+a:visited {
+    /* 暂时 */
+    color: blue;
 }
