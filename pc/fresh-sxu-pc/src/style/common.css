@@ -9,6 +9,7 @@
 
 i {
     font-family: 'icomoon';
+    vertical-align: middle;
 }
 
 p {
@@ -27,12 +28,17 @@ svg {
     margin-left: 70px;
     position: absolute;
     top: 0;
-    background-color: #fff9e7;
+    background-color: #ffffff;
+    letter-spacing: 1px;
 }
 
 .most-top {
     height: 68px;
     background-color: rgb(0, 153, 153);
+}
+
+.before-component {
+    position: relative;
 }
 
 .before-component::before {
@@ -45,7 +51,7 @@ svg {
     text-align: center;
     border-radius: 10px 10px 0 0;
     color: rgb(0, 153, 153);
-    background-color: #fff9e7;
+    background-color: #ffffff;
     font-size: 25px;
 }
 
@@ -68,8 +74,8 @@ svg {
 }
 
 blockquote {
-    margin: 1em 0!important;
-    padding-left: 20px!important;
+    margin: 1em 0 !important;
+    padding-left: 20px !important;
     border-left: 10px solid #b8b2b2;
 }
 

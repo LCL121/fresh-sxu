@@ -1,5 +1,6 @@
 .DS_Store
 node_modules
+/fresh_sxu
 /dist
 /fresh_sxu
 
