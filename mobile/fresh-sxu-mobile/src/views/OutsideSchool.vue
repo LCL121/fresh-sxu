@@ -1,108 +1,92 @@
 <template>
-  <div class="outside-school">
-    <div style="position: relative;">
-      <div style="position: absolute; top: 30px; left: 20px; font-size: 1rem; color: white;">
-        <router-link to="/home">&lt; 返回主菜单</router-link></div>
-        <div class="bgi"></div>
-        <h1 style="position: absolute; bottom: 20px; left: 20px; font-size: 1.1rem; color: white;">校外生活</h1>
+  <div id="outside-school">
+    <Banner :getTop='getTop' />
+    <div id="surrounding">
+      <div id="surrounding-img"
+           class="img">
+        <span id="right-next"
+              class="iconfont next"
+              @click="JumpNext()">&#xe602;</span>
       </div>
-
-    <div id="naver">
-        <ul>
-            <li @click="select(1)"><span class="item1">周边商圈</span></li>
-            <li @click="select(2)"><span class="item2">风景名胜</span></li>
-            <li @click="select(3)"><span class="item3">服务网点</span></li>
-        </ul>
+      <outside />
     </div>
 
-    <outside-school1 v-if="selected === 1"></outside-school1>
-    <outside-school2 v-else-if="selected === 2"></outside-school2>
-    <outside-school3 v-else></outside-school3>
+    <div id="scenicSpots">
+      <div id="scenicSpots-img"
+           class="img"></div>
+      <placeInterest />
+    </div>
+
+    <div id="serviceNetwork">
+      <div id="serviceNetwork-img"
+           class="img"></div>
+      <hostpital />
+    </div>
+
+    <MessageBoard />
+    <ReturnTop />
   </div>
 </template>
 
 <script>
-import OutsideSchool1 from '@/components/OutsideSchool/OutsideSchool1.vue'
-import OutsideSchool2 from '@/components/OutsideSchool/OutsideSchool2.vue'
-import OutsideSchool3 from '@/components/OutsideSchool/OutsideSchool3.vue'
+import hostpital from '@/components/OutsideSchool/hostpital.vue'
+import outside from '@/components/OutsideSchool/outside.vue'
+import placeInterest from '@/components/OutsideSchool/place-interest.vue'
+import ReturnTop from '@/components/ReturnTop.vue'
+import Banner from '@/components/Banner.vue'
+import MessageBoard from '@/components/MessageBoard.vue'
 
 export default {
-  name: 'OutsideSchool',
+  name: 'EnterSchool',
   data () {
     return {
       selected: 1
     }
   },
   components: {
-    OutsideSchool1,
-    OutsideSchool2,
-    OutsideSchool3
+    outside,
+    placeInterest,
+    hostpital,
+    Banner,
+    ReturnTop,
+    MessageBoard
   },
   methods: {
-    select (index) {
-      this.selected = index
+    JumpNext () {
+      this.$router.push({ path: '/shool_preparation' })
+    },
+    getTop () {
+      var offTop = []
+      offTop[0] = 0
+      // 获取#weclome距离上边距的 px
+      offTop[1] = document.getElementById('scenicSpots').offsetTop
+      //
+      offTop[2] = document.getElementById('serviceNetwork').offsetTop
+      return offTop
     }
+
   }
+
 }
 </script>
 
 <style scoped>
-.outside-school{
-  background: #fff9e7;
-  width:100%;
-  overflow:hidden;
+#outside-school {
+  width: 100%;
+  height: 100%;
 }
 
-.bgi{
-  background-image: url("http://bkzs.sxu.edu.cn/images/2019-07/08b0fdfd58ea4cd1a27e0005c97bd04b.jpg");
-  background-size: 100% 230px;
-  background-repeat: no-repeat;
-  width:100%;
-  height:230px;
+#surrounding-img {
+  background-image: url(../../public/img/周边商圈.jpg);
 }
 
-#naver{
-    text-align:center;
-    font-weight: bold;
-    background: #fff9e7;
-    padding:10px 0;
+#scenicSpots-img {
+  background-image: url(../../public/img/风景名胜.jpg);
+  margin-top: 50px;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    color: #808080;
-    display:inline-block;
-}
-
-span{
-    width: 33.334%;
-    position: absolute;
-    top:240px;
-    font-size: 4vw;
-}
-
-.item1{
-    left:3%;
-}
-
-.item2{
-    left: 34%;
-}
-
-.item3{
-    right: 3%;
-}
-
-span:active{
-    color: pink;
-    font-size: 90%;
-}
-
-a{
-  font-weight: bold;
+#serviceNetwork-img {
+  background-image: url(../../public/img/服务网点.jpg);
 }
 
 </style>

@@ -1,119 +1,120 @@
 <template>
-  <div class="school-preparation">
-    <div style="position: relative;">
-        <div style="position: absolute; top: 30px; left: 20px; font-size: 1rem; color: white;">
-        <router-link to="/home">&lt; 返回主菜单</router-link></div>
-        <div class="bgi"></div>
-        <h1 style="position: absolute; bottom: 20px; left: 20px; font-size: 1.1rem; color: white;">入学准备</h1>
-    </div>
-    <div id="naver">
-        <ul>
-            <li @click="select(1)"><span class="item1">军训小贴士</span></li>
-            <li @click="select(2)"><span class="item2">到校方式</span></li>
-            <li @click="select(3)"><span class="item3">报道流程</span></li>
-            <li @click="select(4)"><span class="item4">物品准备</span></li>
-        </ul>
+  <div id="school-preparation">
+    <Banner :getTop='getTop' />
+    <span id="right-next"
+          class="iconfont next"
+          @click="JumpNext()">&#xe602;</span>
+    <div id="goods">
+      <div id="goods-img"
+           class="img">
+      </div>
+      <goods />
     </div>
 
-    <school-preparation1 v-if="selected === 1"></school-preparation1>
-    <school-preparation2 v-else-if="selected === 2"></school-preparation2>
-    <school-preparation3 v-else-if="selected === 3"></school-preparation3>
-    <school-preparation4 v-else></school-preparation4>
+    <div id="process">
+      <div id="process-img"
+           class="img"></div>
+      <process />
+
+    </div>
+
+    <div id="way">
+      <div id="way-img"
+           class="img"></div>
+      <way />
+
+    </div>
+
+    <div id="tip">
+      <div id="tip-img"
+           class="img"></div>
+      <tip />
+    </div>
+
+    <MessageBoard />
+    <ReturnTop />
   </div>
 </template>
 
 <script>
-import SchoolPreparation1 from '@/components/SchoolPreparation/SchoolPreparation1.vue'
-import SchoolPreparation2 from '@/components/SchoolPreparation/SchoolPreparation2.vue'
-import SchoolPreparation3 from '@/components/SchoolPreparation/SchoolPreparation3.vue'
-import SchoolPreparation4 from '@/components/SchoolPreparation/SchoolPreparation4.vue'
+import goods from '@/components/SchoolPreparation/goods.vue'
+import tip from '@/components/SchoolPreparation/tip.vue'
+import way from '@/components/SchoolPreparation/way.vue'
+import process from '@/components/SchoolPreparation/process.vue'
+import ReturnTop from '@/components/ReturnTop.vue'
+import Banner from '@/components/Banner.vue'
+import MessageBoard from '@/components/MessageBoard.vue'
 
 export default {
-  name: 'SchoolPreparation',
+  name: 'EnterSchool',
   data () {
     return {
-      selected: 1
+      selected: 1 // publicPath: process.env.BASE_URL
     }
   },
   components: {
-    SchoolPreparation1,
-    SchoolPreparation2,
-    SchoolPreparation3,
-    SchoolPreparation4
+    way,
+    tip,
+    process,
+    goods,
+    Banner,
+    ReturnTop,
+    MessageBoard
   },
   methods: {
-    select (index) {
-      this.selected = index
+    JumpNext () {
+      this.$router.push({ path: '/in_school' })
+    },
+    getTop () {
+      var offTop = []
+      offTop[0] = 0
+      // 获取#weclome距离上边距的 px
+      offTop[1] = document.getElementById('process').offsetTop
+      //
+      offTop[2] = document.getElementById('way').offsetTop
+      offTop[3] = document.getElementById('tip').offsetTop
+      return offTop
     }
+
   }
+
 }
 </script>
 
 <style scoped>
-.school-preparation{
-    background: #fff9e7;
-    width:100%;
-    overflow:hidden;
+#school-preparation {
+  width: 100%;
+  height: 100%;
 }
 
-.bgi{
-    background-image: url("http://bkzs.sxu.edu.cn/images/2019-07/d88f160d4fa045b6be772e0293b8e6b0.png");
-    background-size: 100% 230px;
-    background-repeat: no-repeat;
-    width:100%;
-    height:230px;
+#goods-img {
+  background-image: url(../../public/img/goods.jpg);
 }
 
-#naver{
-    text-align:center;
-    font-weight: bold;
-    background: #fff9e7;
-    padding:10px 0;
+#process-img {
+  background-image: url(../../public/img/process.jpg);
+  margin-top: 50px;
 }
 
-ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    color: #808080;
-    display:inline-block;
+#way-img {
+  background-image: url(../../public/img/way.jpg);
 }
 
-/* li{
-    float: left;
-    padding:10px;
-    margin:0px;
-} */
-
-span{
-    width: 25%;
-    position: absolute;
-    top:240px;
-    font-size: 4vw;
+#tip-img {
+  background-image: url(../../public/img/tip.jpg);
 }
 
-.item1{
-    left:3%;
+h4,
+h5,
+h6 {
+  font-size: 15px;
 }
 
-.item2{
-    left: 26%;
-}
-.item3{
-    left: 49%;
-}
-.item4{
-    right: 3%;
+h3 {
+  font-size: 16px;
 }
 
-span:active{
-    color: pink;
-    font-size: 90%;
+h2 {
+  font-size: 18px;
 }
-
-a{
-  font-weight: bold;
-}
-
 </style>
