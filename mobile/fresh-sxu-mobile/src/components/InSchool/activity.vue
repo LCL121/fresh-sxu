@@ -27,7 +27,7 @@ export default {
   data () {
     return {
       content: '',
-      check: '学'
+      check: ''
     }
   },
   mounted () {

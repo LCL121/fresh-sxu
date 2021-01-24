@@ -63,6 +63,7 @@ export default {
   border-radius: 10px;
   position: relative;
   top:-3rem;
+  color: #fff;
 }
 
 p {
