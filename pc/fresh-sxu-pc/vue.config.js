@@ -1,7 +1,7 @@
 const path = require('path')
 
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? '/fresh_sxu/pc' : '/',
+  publicPath: process.env.NODE_ENV === 'production' ? '/pc' : '/',
   outputDir: path.resolve(__dirname, './fresh_sxu/pc'),
   pages: {
     index: {
