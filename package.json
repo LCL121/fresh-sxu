@@ -4,7 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "gulp buildall",
+    "build:pc": "gulp buildpc",
+    "build:mobile": "gulp buildmobile",
+    "copy": "gulp copyall",
+    "copy:pc": "gulp copypc",
+    "copy:mobile": "gulp copymobile",
+    "copy:other": "gulp copyother"
   },
   "repository": {
     "type": "git",
