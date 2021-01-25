@@ -2,6 +2,8 @@
 
 基于Vue2.x 全家桶，实现2020 年 山西大学 迎新网站
 
+项目展示地址：<a href="http://fresh_sxu.leichenlong.com" target="_blank">http://fresh_sxu.leichenlong.com</a>
+
 ## 使用方法
 
 npm run build // 打包pc 和mobile 
